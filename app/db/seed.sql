@@ -1,4 +1,3 @@
-
 \c movie_dev
 
 INSERT INTO movies (title, movie_cast, genre, year, synopsis, img)
@@ -28,6 +27,16 @@ VALUES
     'https://www.imdb.com/title/tt2562232/mediaviewer/rm3926180864',
 );
 
+INSERT INTO movies (title, movie_cast, genre, year, synopsis, img)
+VALUES (
+  'The Longest Yard', 
+  'Adam Sandler', 
+  'comedy', 
+  1995, 
+  'A prison football comedy', 
+  'http://www.gstatic.com/tv/thumb/movieposters/35823/p35823_p_v8_ae.jpg'
+  );
+
 INSERT INTO reviews (review_desc, movie_id)
 VALUES ('Perfect example of a re-vamp exectuion', 1);
 
@@ -36,3 +45,7 @@ INSERT INTO reviews
  VALUES
 ('This movie rocks, I loved the idea and the actors', 2),
 ( 'Greatest movie ever!!!', 3);
+
+ INSERT INTO reviews ( reviews_desc, movie_id)
+ VALUES ('funny movie', 3);
+
