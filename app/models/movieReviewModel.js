@@ -16,7 +16,7 @@ module.exports = {
     `, id);
   },
 
-  findReviewsForMoive(id) {
+  findReviewsForMovie(id) {
     return db.many(`
     SELECT * 
     FROM reviews
