@@ -1,37 +1,46 @@
 const router = require('express')();
 
 const movieController = require('../controllers/movieController');
-// const reviewController = require('../controllers/reviewController');
+const reviewController = require('../controllers/reviewController');
 
 
 router.get('/',
-  movieController.findAllMovies,
-  (req, res) => res.json({movies: res.locals.movies})
-);
-router.get('/',
-  movieController.findAllReviews,
-  (req, res) => res.json({reviews: res.locals.reviews})
-);
-
-router.post('/',
-    movieController.createReview,
-    (req, res) => res.render(res.locals.reviews)
-);
-
-router.put('/:id/edit',
-    reviewController.updateReview,
-    (req, res) => res.render(res.locals.reviews)
+  movieController.getAllMovies,
+  (req, res) => res.json({movies: res.locals.data})
 );
 
 router.getone('/:id',
     movieController.getOneMovie,
-    (req, res ) => res.json(res.locals.movies)
+    (req, res ) => res.json(res.locals.data)
+);
+
+
+//this starts the review routes
+router.get('/',
+  movieController.getAllReviews,
+  (req, res) => res.json({reviews: res.locals.data})
+);
+
+router.post('/',
+    movieController.createReview,
+    (req, res) => res.render(res.locals.data)
 );
 
 router.getone('/:id',
     reviewController.getOneReview,
-    (req, res) => res.json(res.locals.reviews)
+    (req, res) => res.json(res.locals.data)
 );
+
+router.put('/:id/edit',
+    reviewController.updatedReview,
+    (req, res) => res.render(res.locals.data)
+);
+
+
+router.delete('/:id',
+    reviewController.destroyReview
+);
+
 
 
 
