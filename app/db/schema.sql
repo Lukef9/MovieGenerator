@@ -17,12 +17,6 @@ CREATE TABLE users (
     icon VARCHAR(255),
 );
 
-CREATE TABLE reviews (
-    id SERIAL PRIMARY KEY,
-    reviews_desc VARCHAR(255),
-    users_id INTEGER REFERENCES USERS,
-    movie_id INTEGER REFERENCES MOVIES
-)
 
 CREATE TABLE movies (
     id SERIAL PRIMARY KEY NOT NULL,
@@ -33,3 +27,10 @@ CREATE TABLE movies (
     synopsis TEXT NOT NULL,
     img VARCHAR(255) NOT NULL,
 );
+
+CREATE TABLE reviews (
+    id SERIAL PRIMARY KEY,
+    reviews_desc VARCHAR(255),
+    users_id INTEGER REFERENCES USERS,
+    movie_id INTEGER REFERENCES MOVIES
+)
