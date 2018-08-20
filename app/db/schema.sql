@@ -3,6 +3,7 @@ CREATE DATABASE movie_dev;
 
 \c movie_dev
 
+DROP TABLE IF EXISTS reviews;
 DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
@@ -12,3 +13,10 @@ CREATE TABLE users (
     email VARCHAR(255) NOT NULL UNIQUE,
     icon VARCHAR(255),
 );
+
+CREATE TABLE reviews (
+    id SERIAL PRIMARY KEY,
+    reviews_desc VARCHAR(255),
+    users_id INTEGER REFERENCES USERS,
+    movie_id INTEGER REFERENCES MOVIES
+)
