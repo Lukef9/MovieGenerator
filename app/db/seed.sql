@@ -1,3 +1,4 @@
+
 \c movie_dev
 
 INSERT INTO movies (title, movie_cast, genre, year, synopsis, img)
@@ -28,5 +29,10 @@ VALUES
 );
 
 INSERT INTO reviews (review_desc, movie_id)
-VALUES ('Perfect example of a re-vamp exectuion',1);
+VALUES ('Perfect example of a re-vamp exectuion', 1);
 
+INSERT INTO reviews
+( review_desc, movie_id)
+ VALUES
+('This movie rocks, I loved the idea and the actors', 2),
+( 'Greatest movie ever!!!', 3);
