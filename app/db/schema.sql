@@ -16,7 +16,7 @@ DROP TABLE IF EXISTS movies;
 -- );
 
 CREATE TABLE movies (
-    id SERIAL PRIMARY KEY NOT NULL,
+    movie_id SERIAL PRIMARY KEY NOT NULL,
     title VARCHAR(255) NOT NULL,
     movie_cast VARCHAR(255) NOT NULL,
     genre VARCHAR(255) NOT NULL,
@@ -26,8 +26,8 @@ CREATE TABLE movies (
 );
 
 CREATE TABLE reviews (
-    id SERIAL PRIMARY KEY,
+    review_id SERIAL PRIMARY KEY,
     review_desc VARCHAR(255),
     -- users_id INTEGER REFERENCES USERS,
-    movie_id INTEGER REFERENCES MOVIES
+    movie_id INTEGER REFERENCES movies(movie_id)
 );
