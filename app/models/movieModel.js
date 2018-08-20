@@ -12,7 +12,7 @@ module.exports = {
         return db.one(`
         SELECT * 
         FROM movies 
-        WHERE id = $1`, id);
+        WHERE movie_id = $1`, id);
     },
     insertNewMovie(movie) {
         return db.one(`
@@ -36,6 +36,6 @@ module.exports = {
     deleteThisMovie(id) {
         return db.none(`
         DELETE FROM movies 
-        WHERE id = $1`, id);
+        WHERE movie_id = $1`, id);
     }
 };
