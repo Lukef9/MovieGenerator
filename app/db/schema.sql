@@ -1,5 +1,7 @@
 DROP DATABASE IF EXISTS movie_dev;
 CREATE DATABASE movie_dev;
+DROP TABLE IF EXISTS reviews;
+DROP TABLE IF EXISTS users;
 
 \c movie_dev
 
