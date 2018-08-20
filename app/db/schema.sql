@@ -31,6 +31,7 @@ CREATE TABLE movies (
 CREATE TABLE reviews (
     id SERIAL PRIMARY KEY,
     reviews_desc VARCHAR(255),
-    users_id INTEGER REFERENCES USERS,
     movie_id INTEGER REFERENCES MOVIES
 )
+
+--  users_id INTEGER REFERENCES USERS, to use in reviews
