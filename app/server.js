@@ -10,8 +10,8 @@ app.use(logger('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.get('/', () => {
-    console.log('Your server test is 200 OK');
+app.get('/', (req, res) => {
+    res.send('Your server test is 200 OK');
 });
 
 app.listen(PORT, () => {
