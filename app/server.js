@@ -5,13 +5,10 @@ const cors = require('cors');
 const path = require('path');
 
 const app = express();
-<<<<<<< HEAD
-=======
 
 const movieRouter = require('./routes/movieRouter');
 const reviewRouter = require('./routes/reviewRouter');
 
->>>>>>> bcf9e24b77fcd4c6e63d8b1dd849f3e9462d16e4
 const PORT = process.env.PORT || 3001;
 
 app.use(logger('dev'));
