@@ -1,6 +1,7 @@
 const db = require('../config/connection');
 
 module.exports = {
+
   findAllReviews() {
     return db.many(`
     SELECT * 
@@ -48,4 +49,5 @@ module.exports = {
     WHERE review_id = $/review_id/
     `, review)
   },
+  
 }
