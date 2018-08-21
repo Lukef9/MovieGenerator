@@ -47,7 +47,7 @@ module.exports = {
     UPDATE reviews
     SET review_desc = $/review_desc/
     WHERE review_id = $/review_id/
-    `, review)
+    RETURNING *
+    `, review);
   },
-  
-}
+};
