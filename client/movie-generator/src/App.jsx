@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import SearchForm from './SearchForm';
+import LoginForm from './LoginForm';
 import Footer from './Footer';
 
 class App extends Component {
@@ -38,7 +40,10 @@ class App extends Component {
         <Footer/>
 
         </footer>
+        <SearchForm />
+        <LoginForm />
       </main>
+
     );
   }
 }
