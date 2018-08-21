@@ -1,7 +1,14 @@
 const bcrypt = require('bcrypt');
 const db = require('../models/user');
 
+const loginRequired = [
+  (req, res, next) => next(!req.session.user || null),
+  (err, req, res, next) => res.sendStatus(401),
+];
+
 module.exports = {
+
+  loginRequired,
 
   async register(req, res, next) {
     try {
@@ -55,10 +62,5 @@ module.exports = {
   logout(req, res, next) {
     req.session.destroy(e => next(e));
   },
-
-  loginRequired = [
-      (req, res, next) => next(!req.session.user || null),
-      (err, req, res, next) => res.sendStatus(401),
-  ];
 
 };
