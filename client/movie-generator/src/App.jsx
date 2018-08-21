@@ -9,7 +9,6 @@ class App extends Component {
       <div className="App">
         <SearchForm />
         <LoginForm />
-        <UserProfileForm />
       </div>
     );
   }
