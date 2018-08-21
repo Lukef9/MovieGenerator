@@ -40,8 +40,8 @@ class App extends Component {
         <Footer/>
 
         </footer>
-        <SearchForm />
-        <LoginForm />
+        {/* <SearchForm />
+        <LoginForm /> */}
       </main>
 
     );
