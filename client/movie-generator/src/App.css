@@ -1,28 +1,107 @@
-.App {
-  text-align: center;
-}
+
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 90px;
+  width: 250px;
+  border: solid blue;
 }
-
 .App-header {
   background-color: #222;
-  height: 150px;
-  padding: 20px;
+  height: 110px;
   color: white;
+  display: flex;
+  font-size: 14pt;
+}
+/* holds the register and login divs */
+.Flex-div{
+  width: 400px;
+  display: flex;
+  margin-left: 500px;
+  padding-left: 250px;
+}
+.Register{
+  margin: 30px 2% 60px 50px;
+  height: 40px;
+  width: 130px;
+  background-color: navy;
+  padding-top: 15px;
+  border-radius: 15px;
+  text-align: center;
+}
+.Login{
+  height: 40px;
+  width: 130px;
+  margin: 30px 1% 60px 50px;
+  background-color: navy;
+  padding-top: 15px;
+  border-radius: 15px;
+  text-align: center;
+
+}
+/* div that contains the search input bar */
+.Search-bar{
+  height: 50px;
+  background-color: navy;
+  padding-top: 15px;
+  text-align: center;
+
+}
+/* search is the input bar */
+.Search{
+  font-size: 16pt;
+  width: 400px;
+}
+/* the submit button for the input search
+TODO make this a search icon instead of a button */
+.Search-submit{
+  font-size: 16pt;
+}
+/* div covering the whole body below the search bar */
+.Main-section{
+  height: 800px;;
+  border: solid red;
+
 }
 
-.App-title {
-  font-size: 1.5em;
+/* the header for the top movie section */
+.Header-bar{
+  background-color: black;
+  color: white;
+  height: 40px;
+  padding-top: 10px;
+  padding-left: 20px;
+}
+/* holds the movie divs for the Genre section */
+.collected-divs{
+  height: 300px;
+  border: dotted red;
+}
+/* movies will pop up in this div */
+.Top-movies{
+  height: 280px;
+  width: 180px;
+  border: solid blue;
+  margin: 5px;
+}
+/* holds the divs for the top genre selection */
+.Top-selection{
+  background-color: black;
+  color: white;
+  height: 40px;
+  padding-top: 10px;
+  padding-left: 20px;
+
+}
+/* the divs from the genre selection
+TODO a for loop or map feature to show the divs based on movies */
+.more-collected-divs{
+  height: 300px;
+  border: dotted red;
+}
+.Footer{
+  background: black;
+  color: white;
+  text-align: center;
+  font-size: 16pt;
 }
 
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
