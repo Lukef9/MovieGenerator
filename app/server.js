@@ -20,11 +20,11 @@ app.use(logger('dev'));
 // Set the secret using the SERVER_SECRET key stored in the .env file
 app.set('server_secret', process.env.SERVER_SECRET);
 // Allow app to create session for users using SERVER_SECRET key
-app.use(session({
-  secret: app.get('server_secret'),
-  resave: false,
-  saveUninitialized: false,
-}));
+// app.use(session({
+//   secret: app.get('server_secret'),
+//   resave: false,
+//   saveUninitialized: false,
+// }));
 
 app.use(bodyParser.urlencoded({
   extended: false
