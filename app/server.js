@@ -3,16 +3,16 @@ require('dotenv').config();
 const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
-const session = require('express-session');
+// const session = require('express-session');
 const cors = require('cors');
-const path = require('path');
+// const path = require('path');
 
 const app = express();
 
 const authRouter = require('./routes/auth');
 const userRouter = require('./routes/user');
 const movieRouter = require('./routes/movieRouter');
-// const reviewRouter = require('./routes/reviewRouter');
+const reviewRouter = require('./routes/reviewRouter');
 
 const PORT = process.env.PORT || 3001;
 
@@ -27,7 +27,7 @@ app.set('server_secret', process.env.SERVER_SECRET);
 // }));
 
 app.use(bodyParser.urlencoded({
-  extended: false
+  extended: false,
 }));
 app.use(bodyParser.json());
 
@@ -38,7 +38,7 @@ app.use(cors());
 app.use('/auth', authRouter);
 app.use('/users', userRouter);
 app.use('/movies', movieRouter);
-// app.use('/reviews', reviewRouter);
+app.use('/reviews', reviewRouter);
 
 app.get('/', (req, res) => {
   res.send('Your server test is 200 OK');
