@@ -21,7 +21,7 @@ module.exports = {
       throw (e);
     }
   },
-  // need find by movie id
+  // need find by movie id and change to camelCase
 
   async createReview(req, res, next) {
     try {
@@ -38,7 +38,7 @@ module.exports = {
     try {
       const { review_desc, movie_id } = req.body;
       const modifiedReview = {
-        id: req.params.id,
+        review_id: req.params.id,
         review_desc,
         movie_id,
       };
