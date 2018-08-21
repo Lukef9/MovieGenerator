@@ -3,15 +3,14 @@ const router = require('express')();
 const movieController = require('../controllers/movieController');
 // const reviewController = require('../controllers/reviewController');
 
+router.get('/:id',
+  movieController.getOneMovie,
+  (req, res) => res.json(res.locals.data),
+);
 
 router.get('/',
   movieController.getAllMovies,
-  (req, res) => res.json({movies: res.locals.data})
-);
-
-router.get('/:id',
-    movieController.getOneMovie,
-    (req, res ) => res.json(res.locals.data)
+  (req, res) => res.json({ movies: res.locals.data }),
 );
 
 
