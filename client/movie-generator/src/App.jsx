@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
 import SearchForm from './SearchForm';
-import LoginForm from './LoginForm';
+// import LoginForm from './LoginForm';
 import Footer from './Footer';
+
 
 class App extends Component {
   constructor(props) {
-    super(props),
+    super(props);
     this.state = {
       something: []
-    },
-  }
+    }
+  };
 
   render() {
     return (
@@ -23,8 +24,7 @@ class App extends Component {
         </div>
         </header>
         <div className="Search-bar">
-        <input className="Search" value="What are you in the mood for?"/>
-        <button className="Search-submit">Submit</button>
+        <SearchForm/>
         </div>
         <section className="Main-section">
           <h2 className="Header-bar">Top 10 Movies</h2>
