@@ -5,7 +5,12 @@ import LoginForm from './LoginForm';
 import Footer from './Footer';
 
 class App extends Component {
-
+  constructor(props) {
+    super(props),
+    this.state = {
+      something: []
+    },
+  }
 
   render() {
     return (
@@ -40,8 +45,6 @@ class App extends Component {
         <Footer/>
 
         </footer>
-        {/* <SearchForm />
-        <LoginForm /> */}
       </main>
 
     );
