@@ -1,10 +1,10 @@
-const db = require('../models/review');
+const db = require('../models/movieReviewModel');
 
 module.exports = {
 
-  async getAll(req, res, next) {
+  async getAllReviews(req, res, next) {
     try {
-      const movies = await db.modelAll();
+      const movies = await db.findAllReviews();
       res.locals.data = movies;
       next();
     } catch (e) {
@@ -12,20 +12,21 @@ module.exports = {
     }
   },
 
-  async getOne(req, res, next) {
+  async getOneReview(req, res, next) {
     try {
-      const movie = await db.modelOne();
+      const movie = await db.findReviewById(req.params.id);
       res.locals.data = movie;
       next();
     } catch (e) {
       throw (e);
     }
   },
+  // need find by movie id
 
-  async create(req, res, next) {
+  async createReview(req, res, next) {
     try {
       const { review_desc, movie_id } = req.body;
-      const newReview = await db.modelSave({ review_desc, movie_id });
+      const newReview = await db.createMovieReview({ review_desc, movie_id });
       res.locals.data = newReview;
       next();
     } catch (e) {
@@ -33,7 +34,7 @@ module.exports = {
     }
   },
 
-  async update(req, res, next) {
+  async updateReview(req, res, next) {
     try {
       const { review_desc, movie_id } = req.body;
       const modifiedReview = {
@@ -41,7 +42,7 @@ module.exports = {
         review_desc,
         movie_id,
       };
-      const updatedReview = await db.modelUpdate(modifiedReview);
+      const updatedReview = await db.updateMoviewReview(modifiedReview);
       res.locals.data = updatedReview;
       next();
     } catch (e) {
@@ -49,9 +50,9 @@ module.exports = {
     }
   },
 
-  async destroy(req, res, next) {
+  async destroyReview(req, res, next) {
     try {
-      await db.modelDestroy(req.params.id);
+      await db.destroyMovieReview(req.params.id);
       next();
     } catch (e) {
       throw (e);

@@ -1,10 +1,10 @@
-const db = require('../models/movie');
+const db = require('../models/movieModel');
 
 module.exports = {
 
-  async getAll(req, res, next) {
+  async getAllMovies(req, res, next) {
     try {
-      const movies = await db.modelAll();
+      const movies = await db.findAllMovies();
       res.locals.data = movies;
       next();
     } catch (e) {
@@ -12,9 +12,9 @@ module.exports = {
     }
   },
 
-  async getOne(req, res, next) {
+  async getOneMovie(req, res, next) {
     try {
-      const movie = await db.modelOne();
+      const movie = await db.findOneMovie(req.params.id);
       res.locals.data = movie;
       next();
     } catch (e) {

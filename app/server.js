@@ -12,7 +12,7 @@ const app = express();
 const authRouter = require('./routes/auth');
 const userRouter = require('./routes/user');
 const movieRouter = require('./routes/movieRouter');
-const reviewRouter = require('./routes/reviewRouter');
+// const reviewRouter = require('./routes/reviewRouter');
 
 const PORT = process.env.PORT || 3001;
 
@@ -38,7 +38,7 @@ app.use(cors());
 app.use('/auth', authRouter);
 app.use('/users', userRouter);
 app.use('/movies', movieRouter);
-app.use('/reviews', reviewRouter);
+// app.use('/reviews', reviewRouter);
 
 app.get('/', (req, res) => {
   res.send('Your server test is 200 OK');
