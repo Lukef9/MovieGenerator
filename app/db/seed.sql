@@ -113,29 +113,29 @@ VALUES (
 INSERT INTO reviews (review_desc, movie_id, rating)
 VALUES ('Perfect example of a re-vamp exectuion', 1, 1);
 
-INSERT INTO reviews (review_desc, movie_id)
+INSERT INTO reviews (review_desc, movie_id, rating)
 VALUES ('This movie rocks, I loved the idea and the actors', 2, 2);
 
-INSERT INTO reviews (review_desc, movie_id)
+INSERT INTO reviews (review_desc, movie_id, rating)
 VALUES ('Funny movie', 3, 3);
 
-INSERT INTO reviews (review_desc, movie_id)
+INSERT INTO reviews (review_desc, movie_id, rating)
 VALUES ('Heath Ledger is the BEST Joker, period.', 4, 4);
 
-INSERT INTO reviews (review_desc, movie_id)
+INSERT INTO reviews (review_desc, movie_id, rating)
 VALUES ('A timeless classic animation movie.', 5, 5);
 
-INSERT INTO reviews (review_desc, movie_id)
+INSERT INTO reviews (review_desc, movie_id, rating)
 VALUES ('RUN FORREST RUN', 6, 6);
 
-INSERT INTO reviews (review_desc, movie_id)
+INSERT INTO reviews (review_desc, movie_id, rating)
 VALUES ('Riveting and out of this world.', 7, 7);
 
-INSERT INTO reviews (review_desc, movie_id)
+INSERT INTO reviews (review_desc, movie_id, rating)
 VALUES ('Pixar does it again!', 8, 8);
 
-INSERT INTO reviews (review_desc, movie_id)
+INSERT INTO reviews (review_desc, movie_id, rating)
 VALUES ('Great movie!', 9, 9);
 
-INSERT INTO reviews (review_desc, movie_id)
+INSERT INTO reviews (review_desc, movie_id, rating)
 VALUES ('I almost cried', 10, 10);
