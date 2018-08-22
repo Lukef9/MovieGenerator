@@ -115,3 +115,55 @@ TODO a for loop or map feature to show the divs based on movies */
 }
 
 
+/* Kenny's showOne Styling Starts Here*/
+
+/* Main Container */
+.showOneContainer {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-evenly;
+}
+
+/* Left Pane -- This Movie's Poster */
+.thisMoviePosterPane {
+  border: 2px solid black;
+  height: 500px;
+  width: 250px;
+}
+
+/* Center Pane */
+.showOneCenterPane {
+  border: 2px solid black;
+  height: 500px;
+  width: 500px;
+}
+/* This Movie's Details */
+.thisMovieTitle {
+  text-align: center;
+}
+.thisMovieSynopsis {
+  border: 1px solid;
+  margin: 20px 20px 20px 20px;
+}
+.thisMovieCast {
+  border: 1px solid;
+  margin: 20px 20px 20px 20px;
+}
+.thisMovieInfo {
+  border: 1px solid;
+  margin: 20px 20px 20px 20px;
+}
+
+/* Right Pane -- User Reviews */
+.userReviewContainer {
+  border: 2px solid black;
+  height: 500px;
+  width: 350px;
+}
+.userReviewHeader {
+  text-align: center;
+}
+.aUserReview {
+  border: 1px solid black;
+  margin: 20px 20px 20px 20px;
+}
