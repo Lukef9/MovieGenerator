@@ -3,15 +3,30 @@ import './App.css';
 import SearchForm from './SearchForm';
 // import LoginForm from './LoginForm';
 import Footer from './Footer';
+import { 
+  fetchMovies,
+  fetchReviews,
+  saveReview,
+  updateReview,
+  } from './services/api';
 
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      something: []
+      movies: [],
+      reviews: []
     }
-  };
+  }
+
+  componentDidMount() {
+    fetchMovies()
+      .then(movieData => this.setState({ movies: movieData.movies, }));
+
+    fetchReviews()
+      .then(reviewData => this.setState({ reviews: reviewData.reviews }));
+  }
 
   render() {
     return (
