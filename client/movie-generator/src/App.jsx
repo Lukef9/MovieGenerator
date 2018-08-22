@@ -4,7 +4,8 @@ import SearchForm from './SearchForm';
 // import LoginForm from './LoginForm';
 import Header from './Header';
 import Footer from './Footer';
-import MovieModal from './MovieModal';
+import Homepage from './Homepage';
+// import MovieModal from './MovieModal'; used in HomePage
 
 import {
   fetchMovies,
@@ -105,19 +106,7 @@ class App extends Component {
       <main className="App">
         <Header />
         <SearchForm />
-        <section className="Main-section">
-          <h2 className="Header-bar">Top 10 Movies</h2>
-
-          <div className="collected-divs">
-
-            {/* this is the div for the movie synopsis */}
-            <div className="Top-movies" id="showModal" onClick={this.showModal}>
-              This is your selected movie
-              {this.state.show ? <MovieModal /> : ''}
-            </div>
-
-          </div>
-        </section>
+        <Homepage show={this.state.show} toggle={this.showModal} />
         <Footer />
       </main>
 
