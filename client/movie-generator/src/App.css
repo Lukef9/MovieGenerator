@@ -98,6 +98,7 @@ TODO a for loop or map feature to show the divs based on movies */
   height: 300px;
   border: dotted red;
 }
+/* homepage footer section */
 .Footer{
   background: black;
   color: white;
@@ -105,14 +106,57 @@ TODO a for loop or map feature to show the divs based on movies */
   font-size: 16pt;
 }
 #modal{
-  border: solid red;
-  height: 800px;
+  /* border: solid red; */
+  height: 500px;
   width: 800px;
-  opacity: 0.8;
+  opacity: 1;
   background-color: black;
-  margin: 0 auto;
-  
+  margin-left: 250px;
 }
+.inner-modal{
+  height: 450px;
+  background-color: #ddd;
+}
+.modal-title{
+  padding: 5px;
+  text-align: center;
+  font-size: 18pt;
+  background: navy;
+  color: white;
+}
+.closeModal{
+margin-left: 775px;
+height: 19px;
+width: 25px;
+background-color: navy;
+color: white;
+text-align: center;
+}
+.modal-body{
+  /* border: dotted red; */
+  margin: 20px;
+  height: 350px;
+  display: flex;
+  padding: 10px;
+}
+.movie-image{
+  border: solid;
+  width: 300px;
+  height: 200px;
+}
+.synopsis{
+  height: 250px;
+  width: 350px;
+  overflow: scroll;
+}
+.review{
+  height: 100px;
+  width: 150px;
+}
+.syn-rev-wrapper{
+  margin: 10px;
+}
+
 
 
 /* Kenny's showOne Styling Starts Here*/
