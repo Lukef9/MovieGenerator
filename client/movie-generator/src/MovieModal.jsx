@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-//import Bulma from 'bulma';
+import React from 'react';
+// import Bulma from 'bulma';
 
 class MovieModal extends Component{
     constructor(props){
@@ -36,9 +36,6 @@ class MovieModal extends Component{
   </div>
 </div>
 );
-}
-
-    
 }
 
 export default MovieModal;
