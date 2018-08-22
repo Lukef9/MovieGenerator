@@ -22,7 +22,7 @@ class App extends Component {
       currentView: 'Movie Index',
       selectedMovie: '',
       selectedReviews: [],
-      movies: [],
+      movies: null,
       reviews: [],
       show: false,
     };
@@ -106,7 +106,7 @@ class App extends Component {
       <main className="App">
         <Header />
         <SearchForm />
-        <Homepage show={this.state.show} toggle={this.showModal} />
+        <Homepage movies={this.state.movies} show={this.state.show} toggle={this.showModal} />
         <Footer />
       </main>
 
