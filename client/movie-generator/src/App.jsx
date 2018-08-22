@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
 import SearchForm from './SearchForm';
-// import LoginForm from './LoginForm';
+//import LoginForm from './LoginForm';
 import Footer from './Footer';
+import MovieModal from './MovieModal';
+
 import { 
   fetchMovies,
   fetchReviews,
-  saveReview,
-  updateReview,
+  // saveReview,
+  // updateReview,
   } from './services/api';
 
 
@@ -16,9 +18,21 @@ class App extends Component {
     super(props);
     this.state = {
       movies: [],
-      reviews: []
+      reviews: [],
+      show: false
+
     }
-  }
+     this.showModal = this.showModal.bind(this);
+    }
+  // this is the show modal function
+  showModal(){
+    this.setState(prevState=> {
+      prevState.show = !prevState.show;
+      return prevState;
+    });
+}
+
+  
 
   componentDidMount() {
     fetchMovies()
@@ -35,7 +49,7 @@ class App extends Component {
         <div className="App-logo">Logo</div>
         <div className="Flex-div">
         <div className="Register">Register</div>
-        <div className="Login">Login</div>
+        <div className="Login">Login </div>
         </div>
         </header>
         <div className="Search-bar">
@@ -44,16 +58,13 @@ class App extends Component {
         <section className="Main-section">
           <h2 className="Header-bar">Top 10 Movies</h2>
             <div className="collected-divs">
-            <div className="Top-movies">
+
+            {/* this is the div for the movie synopsis */}
+          <div className="Top-movies" id="showModal" onClick ={this.showModal}>
             This is you're selected movie
+            {this.state.show ? <MovieModal /> : ''}
             </div>
 
-            </div>
-            <h2 className="Top-selection">Top 10 Genre</h2>
-            <div className="more-collected-divs">
-            <div className="Top-movies">
-            This is you're selected movie
-            </div>
             </div>
         </section>
         <footer className="Footer">
