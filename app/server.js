@@ -3,7 +3,9 @@ require('dotenv').config();
 const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
-// const session = require('express-session');
+const jwt = require('express-jwt');
+
+const secret = process.env.TOKEN_SECRET || 'securesecret';
 const cors = require('cors');
 // const path = require('path');
 
@@ -39,6 +41,15 @@ app.use('/auth', authRouter);
 app.use('/users', userRouter);
 app.use('/movies', movieRouter);
 app.use('/reviews', reviewRouter);
+
+app.get('/',
+  jwt({ secret }),
+  (req, res) => {
+    res.json({
+      message: `Hello ${req.user.username}!`,
+    });
+  });
+
 
 app.get('/', (req, res) => {
   res.send('Your server test is 200 OK');
