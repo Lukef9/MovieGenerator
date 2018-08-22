@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
 import SearchForm from './SearchForm';
-//import LoginForm from './LoginForm';
+// import LoginForm from './LoginForm';
+import Header from './Header';
 import Footer from './Footer';
 import MovieModal from './MovieModal';
 
-import { 
+import {
   fetchMovies,
   fetchReviews,
   saveReview,
   updateReview,
-  } from './services/api';
-
+} from './services/api';
 
 
 class App extends Component {
@@ -31,13 +31,6 @@ class App extends Component {
     this.createReview = this.createReview.bind(this);
     this.editReview = this.editReview.bind(this);
   }
-  // this is the show modal function
-  showModal(){
-    this.setState(prevState=> {
-      prevState.show = !prevState.show;
-      return prevState;
-    });
-}
 
 
   componentDidMount() {
@@ -46,6 +39,14 @@ class App extends Component {
 
     fetchReviews()
       .then(reviewData => this.setState({ reviews: reviewData.reviews }));
+  }
+
+  // this is the show modal function
+  showModal() {
+    this.setState((prevState) => {
+      prevState.show = !prevState.show;
+      return prevState;
+    });
   }
 
   showMovie(movie) {
@@ -84,55 +85,44 @@ class App extends Component {
   //   const { currentView } = this.state;
   //   const { movies, reviews, selectedMovie, selectedReviews } = this.state;
 
-    // switch (currentView) {
-    //   case 'Movie Index':
-    //     return <MovieIndex movies={movies}/>;
-    //   case 'Show One':
-    //     return (<Movie 
-    //       selectedMovie={selectedMovie}
-    //       showMovie={this.showMovie}
-    //       selectedReviews={selectedReviews}
-    //       showReviews={this.showReviews}
-    //       reviews={reviews}
-    //       onCreate={this.createReview}
-    //       onUpdate={this.updateReview} />);
-    // }
+  // switch (currentView) {
+  //   case 'Movie Index':
+  //     return <MovieIndex movies={movies}/>;
+  //   case 'Show One':
+  //     return (<Movie
+  //       selectedMovie={selectedMovie}
+  //       showMovie={this.showMovie}
+  //       selectedReviews={selectedReviews}
+  //       showReviews={this.showReviews}
+  //       reviews={reviews}
+  //       onCreate={this.createReview}
+  //       onUpdate={this.updateReview} />);
+  // }
   // }
 
   render() {
     return (
       <main className="App">
-        <header className="App-header">
-          <div className="App-logo">Logo</div>
-          <div className="Flex-div">
-            <div className="Register">Register</div>
-            <div className="Login">Login</div>
-          </div>
-        </header>
-        <div className="Search-bar">
-          <SearchForm />
-        </div>
+        <Header />
+        <SearchForm />
         <section className="Main-section">
           <h2 className="Header-bar">Top 10 Movies</h2>
 
           <div className="collected-divs">
 
             {/* this is the div for the movie synopsis */}
-            <div className="Top-movies" id="showModal" onClick ={this.showModal}>
+            <div className="Top-movies" id="showModal" onClick={this.showModal}>
               This is your selected movie
               {this.state.show ? <MovieModal /> : ''}
             </div>
-            
+
           </div>
         </section>
-        <footer className="Footer">
-          <Footer />
-
-        </footer>
+        <Footer />
       </main>
 
     );
   }
-};
+}
 
 export default App;
