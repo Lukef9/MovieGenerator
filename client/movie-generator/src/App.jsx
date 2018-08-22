@@ -80,24 +80,24 @@ class App extends Component {
     });
   }
 
-  renderCurrentView() {
-    const { currentView } = this.state;
-    const { movies, reviews, selectedMovie, selectedReviews } = this.state;
+  // renderCurrentView() {
+  //   const { currentView } = this.state;
+  //   const { movies, reviews, selectedMovie, selectedReviews } = this.state;
 
-    switch (currentView) {
-      case 'Movie Index':
-        return <MovieIndex movies={movies}/>;
-      case 'Show One':
-        return (<Movie 
-          selectedMovie={selectedMovie}
-          showMovie={this.showMovie}
-          selectedReviews={selectedReviews}
-          showReviews={this.showReviews}
-          reviews={reviews}
-          onCreate={this.createReview}
-          onUpdate={this.updateReview} />);
-    }
-  }
+    // switch (currentView) {
+    //   case 'Movie Index':
+    //     return <MovieIndex movies={movies}/>;
+    //   case 'Show One':
+    //     return (<Movie 
+    //       selectedMovie={selectedMovie}
+    //       showMovie={this.showMovie}
+    //       selectedReviews={selectedReviews}
+    //       showReviews={this.showReviews}
+    //       reviews={reviews}
+    //       onCreate={this.createReview}
+    //       onUpdate={this.updateReview} />);
+    // }
+  // }
 
   render() {
     return (
@@ -115,14 +115,14 @@ class App extends Component {
         <section className="Main-section">
           <h2 className="Header-bar">Top 10 Movies</h2>
 
-            <div className="collected-divs">
+          <div className="collected-divs">
 
             {/* this is the div for the movie synopsis */}
-          <div className="Top-movies" id="showModal" onClick ={this.showModal}>
-            This is you're selected movie
-            {this.state.show ? <MovieModal /> : ''}
+            <div className="Top-movies" id="showModal" onClick ={this.showModal}>
+              This is your selected movie
+              {this.state.show ? <MovieModal /> : ''}
             </div>
-            </div>
+            
           </div>
         </section>
         <footer className="Footer">
@@ -133,6 +133,6 @@ class App extends Component {
 
     );
   }
-}
+};
 
 export default App;
