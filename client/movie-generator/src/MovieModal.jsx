@@ -2,10 +2,10 @@ import React from 'react';
 // import Bulma from 'bulma';
 
 
-function MovieModal() {
+function MovieModal({toggle}) {
   return (
     <div id="modal">
-      <div type="button" className="closeModal">X</div>
+      <div type="button" onClick={toggle} className="closeModal">X</div>
       <div className="inner-modal">
         <header className="modal-header">
           <p className="modal-title">Movie Title</p>

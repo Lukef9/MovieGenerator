@@ -75,6 +75,9 @@ TODO make this a search icon instead of a button */
 .collected-divs{
   height: 300px;
   border: dotted red;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-evenly;
 }
 /* movies will pop up in this div */
 .Top-movies{
@@ -113,6 +116,8 @@ TODO a for loop or map feature to show the divs based on movies */
   background-color: black;
   margin-left: 20vw;
   margin-top: -10vh;
+  z-index: 10;
+  position: absolute;
 }
 .inner-modal{
   height: 450px;
@@ -211,4 +216,9 @@ text-align: center;
 .aUserReview {
   border: 1px solid black;
   margin: 20px 20px 20px 20px;
+}
+
+.posters {
+  height: 280px;
+  width: 180px;
 }
