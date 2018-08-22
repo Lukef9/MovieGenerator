@@ -51,10 +51,20 @@
   font-size: 16pt;
   width: 400px;
 }
+.Search:hover{
+  box-shadow: 3px 5px;
+
+}
 /* the submit button for the input search
 TODO make this a search icon instead of a button */
 .Search-submit{
-  font-size: 16pt;
+  font-size: 14pt;
+  cursor: pointer;
+  color: #4285f4;
+}
+.Search-submit:hover{
+  box-shadow: 3px 5px black;
+  
 }
 /* div covering the whole body below the search bar */
 .Main-section{
@@ -105,14 +115,23 @@ TODO a for loop or map feature to show the divs based on movies */
   text-align: center;
   font-size: 16pt;
 }
+.Icon{
+    display: inline-block;
+    height: 21px;
+    position: relative;
+    width: 22px;
+    vertical-align: center;
+} 
 #modal{
-  border: solid lightgray; 
-  height: 500px;
-  width: 800px;
+  border: solid ; 
+  height: 70vh;
+  width: 60vw;
   opacity: 1;
   background-color: black;
-  margin-left: 20vw;
-  margin-top: -10vh;
+  margin-left: 19vw;
+  margin-top: -31vh;
+  position: absolute;
+  z-index: 1;
 }
 .inner-modal{
   height: 450px;
@@ -126,7 +145,7 @@ TODO a for loop or map feature to show the divs based on movies */
   color: white;
 }
 .closeModal{
-margin-left: 775px;
+margin-left: 58vw;
 height: 19px;
 width: 25px;
 background-color: navy;
