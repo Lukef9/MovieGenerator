@@ -2,31 +2,30 @@ const db = require('../config/connection');
 
 module.exports = {
 
-    findAllMovies() {
-        return db.many(`
+  findAllMovies() {
+    return db.many(`
         SELECT * 
-        FROM movies 
-        JOIN reviews 
-        ON reviews.movie_id = movies.movie_id`);
-    },
-    
-    findOneMovie(id) {
-        return db.one(`
+        FROM movies
+    `);
+  },
+
+  findOneMovie(id) {
+    return db.one(`
         SELECT * 
         FROM movies 
         WHERE movie_id = $1`, id);
-    },
+  },
 
-    insertNewMovie(movie) {
-        return db.one(`
+  insertNewMovie(movie) {
+    return db.one(`
         INSERT INTO movies 
-        (title, movie_cast, genre, year, synopsis, img) 
-        VALUES ($/title/, $/movie_cast/, $/genre/, $/year/, $/synopsis/, $/img/) 
+        (title, movie_cast, genre, year, synopsis, img, movie_rating) 
+        VALUES ($/title/, $/movie_cast/, $/genre/, $/year/, $/synopsis/, $/img/, $/movie_rating/) 
         RETURNING *`, movie);
-    },
+  },
 
-    updateThisMovie(id, movieData) {
-        return db.one(`
+  updateThisMovie(id, movieData) {
+    return db.one(`
         UPDATE movies 
         SET 
         title = $/title/,
@@ -34,13 +33,14 @@ module.exports = {
         genre = $/genre/,
         year = $/year/,
         synopsis = $/synopsis/,
-        img = $/img/ 
+        img = $/img/,
+        movie_rating = $/movie_rating/,
         RETURNING *`, movieData);
-    },
-    
-    deleteThisMovie(id) {
-        return db.none(`
+  },
+
+  deleteThisMovie(id) {
+    return db.none(`
         DELETE FROM movies 
         WHERE movie_id = $1`, id);
-    },
+  },
 };

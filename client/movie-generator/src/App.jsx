@@ -103,15 +103,15 @@ class App extends Component {
           <h2 className="Header-bar">Top 10 Movies</h2>
           <div className="collected-divs">
             <div className="Top-movies">
-            This is you're selected movie
-              </div>
+            This is your selected movie
+            </div>
 
           </div>
           <h2 className="Top-selection">Top 10 Genre</h2>
           <div className="more-collected-divs">
             <div className="Top-movies">
-            This is you're selected movie
-              </div>
+            This is your selected movie
+            </div>
           </div>
         </section>
         <footer className="Footer">
