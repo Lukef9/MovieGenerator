@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
 import SearchForm from './SearchForm';
-// import LoginForm from './LoginForm';
+//import LoginForm from './LoginForm';
 import Footer from './Footer';
-import {
+import MovieModal from './MovieModal';
+
+import { 
   fetchMovies,
   fetchReviews,
   saveReview,
   updateReview,
-} from './services/api';
+  } from './services/api';
+
 
 
 class App extends Component {
@@ -20,12 +23,22 @@ class App extends Component {
       selectedReviews: [],
       movies: [],
       reviews: [],
+      show: false,
     };
+    this.showModal = this.showModal.bind(this);
     this.showMovie = this.showMovie.bind(this);
     this.showReviews = this.showReviews.bind(this);
     this.createReview = this.createReview.bind(this);
     this.editReview = this.editReview.bind(this);
   }
+  // this is the show modal function
+  showModal(){
+    this.setState(prevState=> {
+      prevState.show = !prevState.show;
+      return prevState;
+    });
+}
+
 
   componentDidMount() {
     fetchMovies()
@@ -101,16 +114,14 @@ class App extends Component {
         </div>
         <section className="Main-section">
           <h2 className="Header-bar">Top 10 Movies</h2>
-          <div className="collected-divs">
-            <div className="Top-movies">
-            This is your selected movie
-            </div>
 
-          </div>
-          <h2 className="Top-selection">Top 10 Genre</h2>
-          <div className="more-collected-divs">
-            <div className="Top-movies">
-            This is your selected movie
+            <div className="collected-divs">
+
+            {/* this is the div for the movie synopsis */}
+          <div className="Top-movies" id="showModal" onClick ={this.showModal}>
+            This is you're selected movie
+            {this.state.show ? <MovieModal /> : ''}
+            </div>
             </div>
           </div>
         </section>

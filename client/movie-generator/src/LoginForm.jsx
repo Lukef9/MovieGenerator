@@ -31,7 +31,7 @@ class LoginForm extends Component {
                     <input 
                         type="text" 
                         name="userName"
-                        placeholder="Username" 
+                        placeholder="Login" 
                         value={this.state.userName} 
                         onChange={this.handleUsername} 
                     />

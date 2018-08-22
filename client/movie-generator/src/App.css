@@ -30,13 +30,13 @@
 }
 .Login{
   height: 40px;
-  width: 130px;
+  width: 120px;
   margin: 30px 1% 60px 50px;
   background-color: navy;
   padding-top: 15px;
   border-radius: 15px;
   text-align: center;
-
+  font-size: 14pt;
 }
 /* div that contains the search input bar */
 .Search-bar{
@@ -104,6 +104,16 @@ TODO a for loop or map feature to show the divs based on movies */
   text-align: center;
   font-size: 16pt;
 }
+#modal{
+  border: solid red;
+  height: 800px;
+  width: 800px;
+  opacity: 0.8;
+  background-color: black;
+  margin: 0 auto;
+  
+}
+
 
 /* Kenny's showOne Styling Starts Here*/
 
