@@ -106,12 +106,13 @@ TODO a for loop or map feature to show the divs based on movies */
   font-size: 16pt;
 }
 #modal{
-  /* border: solid red; */
+  border: solid lightgray; 
   height: 500px;
   width: 800px;
   opacity: 1;
   background-color: black;
-  margin-left: 250px;
+  margin-left: 20vw;
+  margin-top: -10vh;
 }
 .inner-modal{
   height: 450px;
