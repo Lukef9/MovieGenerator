@@ -25,8 +25,8 @@ module.exports = {
 
   async createReview(req, res, next) {
     try {
-      const { review_desc, movie_id } = req.body;
-      const newReview = await db.createMovieReview({ review_desc, movie_id });
+      const { review_desc, movie_id, rating } = req.body;
+      const newReview = await db.createMovieReview({ review_desc, movie_id, rating });
       res.locals.data = newReview;
       next();
     } catch (e) {
@@ -36,11 +36,12 @@ module.exports = {
 
   async updateReview(req, res, next) {
     try {
-      const { review_desc, movie_id } = req.body;
+      const { review_desc, movie_id, rating } = req.body;
       const modifiedReview = {
         review_id: req.params.id,
         review_desc,
         movie_id,
+        rating,
       };
       const updatedReview = await db.updateMoviewReview(modifiedReview);
       res.locals.data = updatedReview;
