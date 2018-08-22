@@ -22,12 +22,14 @@ CREATE TABLE movies (
     genre VARCHAR(255) NOT NULL,
     year INTEGER NOT NULL,
     synopsis TEXT NOT NULL,
-    img VARCHAR(255) NOT NULL
+    img VARCHAR(255) NOT NULL,
+    movie_rating INTEGER,
 );
 
 CREATE TABLE reviews (
     review_id SERIAL PRIMARY KEY,
     review_desc VARCHAR(255),
+    rating INTEGER,
     -- users_id INTEGER REFERENCES USERS,
     movie_id INTEGER REFERENCES movies(movie_id)
 );

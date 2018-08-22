@@ -11,8 +11,8 @@ const cors = require('cors');
 
 const app = express();
 
-const authRouter = require('./routes/auth');
-const userRouter = require('./routes/user');
+// const authRouter = require('./routes/auth');
+// const userRouter = require('./routes/user');
 const movieRouter = require('./routes/movieRouter');
 const reviewRouter = require('./routes/reviewRouter');
 
@@ -37,18 +37,18 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Mounting Routes
-app.use('/auth', authRouter);
-app.use('/users', userRouter);
+// app.use('/auth', authRouter);
+// app.use('/users', userRouter);
 app.use('/movies', movieRouter);
 app.use('/reviews', reviewRouter);
 
-app.get('/',
-  jwt({ secret }),
-  (req, res) => {
-    res.json({
-      message: `Hello ${req.user.username}!`,
-    });
-  });
+// app.get('/',
+//   jwt({ secret }),
+//   (req, res) => {
+//     res.json({
+//       message: `Hello ${req.user.username}!`,
+//     });
+//   });
 
 
 app.get('/', (req, res) => {

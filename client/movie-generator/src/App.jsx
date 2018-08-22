@@ -3,12 +3,12 @@ import './App.css';
 import SearchForm from './SearchForm';
 // import LoginForm from './LoginForm';
 import Footer from './Footer';
-import { 
+import {
   fetchMovies,
   fetchReviews,
   saveReview,
   updateReview,
-  } from './services/api';
+} from './services/api';
 
 
 class App extends Component {
@@ -17,7 +17,7 @@ class App extends Component {
     this.state = {
       movies: [],
       reviews: []
-    }
+    };
   }
 
   componentDidMount() {
@@ -32,32 +32,32 @@ class App extends Component {
     return (
       <main className="App">
         <header className="App-header">
-        <div className="App-logo">Logo</div>
-        <div className="Flex-div">
-        <div className="Register">Register</div>
-        <div className="Login">Login</div>
-        </div>
+          <div className="App-logo">Logo</div>
+          <div className="Flex-div">
+            <div className="Register">Register</div>
+            <div className="Login">Login</div>
+          </div>
         </header>
         <div className="Search-bar">
-        <SearchForm/>
+          <SearchForm />
         </div>
         <section className="Main-section">
           <h2 className="Header-bar">Top 10 Movies</h2>
-            <div className="collected-divs">
+          <div className="collected-divs">
             <div className="Top-movies">
-            This is you're selected movie
+            This is your selected movie
             </div>
 
-            </div>
-            <h2 className="Top-selection">Top 10 Genre</h2>
-            <div className="more-collected-divs">
+          </div>
+          <h2 className="Top-selection">Top 10 Genre</h2>
+          <div className="more-collected-divs">
             <div className="Top-movies">
-            This is you're selected movie
+            This is your selected movie
             </div>
-            </div>
+          </div>
         </section>
         <footer className="Footer">
-        <Footer/>
+          <Footer />
 
         </footer>
       </main>
