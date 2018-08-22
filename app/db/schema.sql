@@ -23,7 +23,7 @@ CREATE TABLE movies (
     year INTEGER NOT NULL,
     synopsis TEXT NOT NULL,
     img VARCHAR(255) NOT NULL,
-    movie_rating INTEGER,
+    movie_rating INTEGER
 );
 
 CREATE TABLE reviews (
