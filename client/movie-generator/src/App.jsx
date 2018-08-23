@@ -160,9 +160,9 @@ class App extends Component {
     const { currentPage } = this.state;
     switch (currentPage) {
       case 'home':
-        return <Homepage movies={this.state.movies} show={this.state.show} toggle={this.showModal} />
+        return <Homepage movies={this.state.movies} show={this.state.show} toggle={this.showModal}  />
       case 'one':
-        return <ShowOne
+        return (this.state.movies ? <ShowOne
           showEditForm={this.showEditForm}
           editShow={this.state.editShow}
           editThisReview={this.state.editThisReview}
@@ -173,7 +173,7 @@ class App extends Component {
           onUpdate={this.editReview}
           toggleCurrentPane={this.toggleCurrentPane}
           currentPane={this.state.currentPane}
-        /> 
+        /> : '')
       }
   }
 
