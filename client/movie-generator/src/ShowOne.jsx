@@ -35,6 +35,8 @@ function showLeft(movie) {
     )
   }
 
+
+{/* this is where the user review container info starts */}
   function showRight(showEditForm, editShow, editThisReview, movie, reviews, onCreate, onDelete, onUpdate) {
     return (
 <div className="userReviewContainer">
