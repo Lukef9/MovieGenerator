@@ -139,3 +139,6 @@ VALUES ('Great movie!', 9, 9);
 
 INSERT INTO reviews (review_desc, movie_id, rating)
 VALUES ('I almost cried', 10, 10);
+
+INSERT INTO reviews (review_desc, movie_id, rating)
+VALUES ('Test Filter Review... This should in Star Trek', 1, 1);
