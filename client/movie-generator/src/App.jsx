@@ -28,6 +28,7 @@ class App extends Component {
       reviews: null,
       show: false,
       editShow: false,
+      editThisReview: null,
     };
     this.showModal = this.showModal.bind(this);
     this.showEditForm = this.showEditForm.bind(this);
@@ -62,9 +63,11 @@ class App extends Component {
     });
   }
 
-  showEditForm() {
+  showEditForm(evt) {
+    const name = parseInt(evt.target.name);
     this.setState((prevState) => {
       prevState.editShow = !prevState.editShow;
+      prevState.editThisReview = name;
       return prevState;
     });
   }
@@ -137,6 +140,7 @@ class App extends Component {
           ? <ShowOne
             showEditForm={this.showEditForm}
             editShow={this.state.editShow}
+            editThisReview={this.state.editThisReview}
             movie={movies[0]} 
             reviews={reviews} 
             onCreate={this.createReview}

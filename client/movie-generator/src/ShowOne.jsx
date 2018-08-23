@@ -1,8 +1,15 @@
+/* eslint-disable*/
 import React from 'react';
 import CreateReviewForm from './UserReviewForm';
 import EditForm from './EditForm';
 
-function ShowOne({ showEditForm, editShow, movie, reviews, onCreate, onDelete, onUpdate }) {
+function chooseDisplay(review, onUpdate, editShow, evt) {
+  const y = evt;
+  const x = (editShow && review.review_id=== y? <EditForm review={review} onUpdate={onUpdate} /> : review.review_desc);
+  return x;
+}
+
+function ShowOne({ showEditForm, editShow, editThisReview, movie, reviews, onCreate, onDelete, onUpdate }) {
   return (
       <div className="showOneContainer">
           <div className="thisMoviePosterPane">
@@ -39,13 +46,10 @@ function ShowOne({ showEditForm, editShow, movie, reviews, onCreate, onDelete, o
               reviews.filter(review => review.movie_id === movie.movie_id).map((review) => (
                 <div key={review.review_id}>
                   <div className="aUserReview">
-                  {(editShow && (evt => evt.target.name === review.review_id)) ? (
-                  <EditForm review={review} onUpdate={onUpdate} /> 
-                ) : (
-                  review.review_desc )}
+                  {chooseDisplay(review, onUpdate, editShow, editThisReview)}
                   </div>
                   <button onClick={() => onDelete(review.review_id)}>Delete Review</button>
-                  <button onClick={() => showEditForm(review.review_id)} name={1} >edit</button>
+                  <button onClick={(evt) => showEditForm(evt)} name={review.review_id} >edit</button>
                   
                 </div>
               ))
