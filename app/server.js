@@ -12,7 +12,7 @@ const cors = require('cors');
 const app = express();
 
 const authRouter = require('./routes/auth');
-const userRouter = require('./routes/user');
+// const userRouter = require('./routes/user');
 const movieRouter = require('./routes/movieRouter');
 const reviewRouter = require('./routes/reviewRouter');
 
@@ -31,7 +31,7 @@ app.use(cors());
 
 // Mounting Routes
 app.use('/auth', authRouter);
-app.use('/users', userRouter);
+// app.use('/users', userRouter);
 app.use('/movies', movieRouter);
 app.use('/reviews', reviewRouter);
 

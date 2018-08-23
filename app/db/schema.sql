@@ -7,13 +7,13 @@ DROP TABLE IF EXISTS reviews;
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS movies;
 
--- CREATE TABLE users (
---     id SERIAL PRIMARY KEY,
---     username VARCHAR(15) NOT NULL UNIQUE,
---     pass_digest VARCHAR(25) NOT NULL,
---     email VARCHAR(255) NOT NULL UNIQUE,
---     icon VARCHAR(255)
--- );
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(15) NOT NULL UNIQUE,
+    pass_digest VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    icon VARCHAR(255)
+);
 
 CREATE TABLE movies (
     movie_id SERIAL PRIMARY KEY NOT NULL,
