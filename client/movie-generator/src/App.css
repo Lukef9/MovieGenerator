@@ -91,7 +91,7 @@ TODO make this a search icon instead of a button */
 /* holds the movie divs for the Genre section */
 .collected-divs{
   height: 300px;
-  border: dotted red;
+  /* border: dotted red; */
   display: flex;
   flex-flow: row;
   justify-content: space-evenly;
@@ -102,6 +102,7 @@ TODO make this a search icon instead of a button */
   width: 180px;
   border: solid blue;
   margin: 5px;
+
 }
 /* holds the divs for the top genre selection */
 .Top-selection{
@@ -125,7 +126,7 @@ TODO a for loop or map feature to show the divs based on movies */
   text-align: center;
   font-size: 16pt;
   padding: 1vh;
-  border-top: 15px solid navy;
+  border-top: 15px solid #6f2232;
 }
 .Icon{
     display: inline-block;
@@ -260,16 +261,13 @@ p{
 /* Right Pane -- User Reviews */
 .userReviewContainer {
   /* border: 2px solid; */
-  height: 60vh;
+  height: 50vh;
   width: 34vw;
-  padding: 2vh;
-  margin: 4vh;
+  /* padding: 2vh; */
+  margin-left: 4vh;
   position: absolute;
   z-index: 10;
   font-size: 20pt;
-  /* background-color: #1A1A1D */
-  width: 30vw;
-
 }
 
 .userReviewHeader {
