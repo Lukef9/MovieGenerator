@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class EditForm extends Component {
   constructor(props) {
     super(props);
-    const { review, movie_id } = props;
+    const { review } = props;
     this.state = {
       review: review.review_desc,
       movie_id: review.movie_id,
@@ -15,8 +15,9 @@ class EditForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    debugger;
     const reviewData = {
-      review: this.state.review,
+      review_desc: this.state.review,
       movie_id: this.state.movie_id,
       review_id: this.props.review.review_id,
     };
