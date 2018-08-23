@@ -1,5 +1,3 @@
-\c movie_dev
-
 INSERT INTO movies (title, movie_cast, genre, year, synopsis, img, movie_rating)
 VALUES (
     'Star Trek',

@@ -1,3 +1,4 @@
+/* eslint-disable*/
 import React, { Component } from 'react';
 import jwtDecode from 'jwt-decode';
 import './App.css';
@@ -26,7 +27,6 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentView: 'Movie Index',
       selectedMovie: '',
       selectedReviews: [],
       movies: null,
@@ -36,6 +36,8 @@ class App extends Component {
       email: null,
       editShow: false,
       editThisReview: null,
+      currentPane: 'left',
+      currentPage: 'one',
     };
     this.showModal = this.showModal.bind(this);
     this.showEditForm = this.showEditForm.bind(this);
@@ -44,9 +46,10 @@ class App extends Component {
     this.createReview = this.createReview.bind(this);
     this.editReview = this.editReview.bind(this);
     this.deleteReview = this.deleteReview.bind(this);
-    this.createUser = this.createUser.bind(this);
-    this.loginUser = this.loginUser.bind(this);
-    this.logUser = this.logUser.bind(this);
+    this.createUser = this.createUser.bind(this); //
+    this.loginUser = this.loginUser.bind(this);  //
+    this.logUser = this.logUser.bind(this);  //
+    this.toggleCurrentPane = this.toggleCurrentPane.bind(this);
   }
 
   componentDidMount() {
@@ -68,6 +71,14 @@ class App extends Component {
   showModal() {
     this.setState((prevState) => {
       prevState.show = !prevState.show;
+      return prevState;
+    });
+  }
+
+  toggleCurrentPane(evt) {
+    const name = evt.target.name;
+    this.setState((prevState) => {
+      prevState.currentPane = name;
       return prevState;
     });
   }
@@ -166,6 +177,27 @@ class App extends Component {
   // }
   // }
 
+  choosePage() {
+    const { currentPage } = this.state;
+    switch (currentPage) {
+      case 'home':
+        return <Homepage movies={this.state.movies} show={this.state.show} toggle={this.showModal}  />
+      case 'one':
+        return (this.state.movies ? <ShowOne
+          showEditForm={this.showEditForm}
+          editShow={this.state.editShow}
+          editThisReview={this.state.editThisReview}
+          movie={this.state.movies[0]} 
+          reviews={this.state.reviews} 
+          onCreate={this.createReview}
+          onDelete={this.deleteReview}
+          onUpdate={this.editReview}
+          toggleCurrentPane={this.toggleCurrentPane}
+          currentPane={this.state.currentPane}
+        /> : '')
+      }
+  }
+
   render() {
     const { movies, reviews, show } = this.state;
 
@@ -175,8 +207,8 @@ class App extends Component {
         <LoginForm onSubmit={this.loginUser} />
         {/* <Header />
         <SearchForm />
-        {false ? <Homepage movies={movies} show={show} toggle={this.showModal} /> : ''}
-        {movies && reviews
+        {this.choosePage()}
+        {/* {movies && reviews
           ? <ShowOne
             showEditForm={this.showEditForm}
             editShow={this.state.editShow}
@@ -186,8 +218,10 @@ class App extends Component {
             onCreate={this.createReview}
             onDelete={this.deleteReview}
             onUpdate={this.editReview}
-            /> : ''}
-        <Footer /> */}
+            toggleCurrentPane={this.toggleCurrentPane}
+            currentPane={this.state.currentPane}
+            /> : ''} */}
+        <Footer />
       </main>
 
     );

@@ -1,12 +1,20 @@
-
+body {
+  width: 100%;
+  height: 100%;
+}
 
 .App-logo {
-  height: 90px;
-  width: 250px;
-  border: solid blue;
+  height: 5vh;
+  width: 50vw;
+  border: 5px solid #6f2232;
+  margin: 1vh;
+  text-align: center;
+  padding: 4vh;
+  font-size: 20pt;
+  color: #4e4e50;
 }
 .App-header {
-  background-color: #222;
+  background-color: #1a1a1d;
   height: 110px;
   color: white;
   display: flex;
@@ -20,28 +28,30 @@
   padding-left: 250px;
 }
 .Register{
-  margin: 30px 2% 60px 50px;
-  height: 40px;
-  width: 130px;
-  background-color: navy;
-  padding-top: 15px;
+  margin: 4vh 2vh 2vw 9vw;
+  height: 5vh;
+  width: 8vw;
+  background-color:#6f2232;
+  padding-top: 2vh;
   border-radius: 15px;
   text-align: center;
+  color: #1a1a1d;
 }
 .Login{
-  height: 40px;
-  width: 120px;
-  margin: 30px 1% 60px 50px;
-  background-color: navy;
-  padding-top: 15px;
+  height: 5vh;
+  width: 8vw;
+  margin: 4vh 1vh 2vw 1vw;
+  background-color: #6f2232;
+  padding-top: 2vh;
   border-radius: 15px;
   text-align: center;
   font-size: 14pt;
+  color: #1a1a1d;
 }
 /* div that contains the search input bar */
 .Search-bar{
   height: 50px;
-  background-color: navy;
+  background-color: #6f2232;
   padding-top: 15px;
   text-align: center;
 
@@ -84,16 +94,17 @@ TODO make this a search icon instead of a button */
 /* holds the movie divs for the Genre section */
 .collected-divs{
   height: 300px;
-  border: dotted red;
+  /* border: dotted red; */
   display: flex;
-  flex-flow: row;
+  flex-wrap: wrap;
+  /* flex-flow: row; */
   justify-content: space-evenly;
 }
 /* movies will pop up in this div */
 .Top-movies{
   height: 280px;
   width: 180px;
-  border: solid blue;
+  border: solid black 2px;
   margin: 5px;
 }
 /* holds the divs for the top genre selection */
@@ -109,14 +120,16 @@ TODO make this a search icon instead of a button */
 TODO a for loop or map feature to show the divs based on movies */
 .more-collected-divs{
   height: 300px;
-  border: dotted red;
+  /* border: dotted red; */
 }
 /* homepage footer section */
 .Footer{
-  background: black;
+  background: #1a1a1d;
   color: white;
   text-align: center;
   font-size: 16pt;
+  padding: 1vh;
+  border-top: 15px solid navy;
 }
 .Icon{
     display: inline-block;
@@ -135,7 +148,6 @@ TODO a for loop or map feature to show the divs based on movies */
   margin-top: -31vh;
   position: absolute;
   z-index: 10;
-
 }
 .inner-modal{
   height: 450px;
@@ -189,54 +201,95 @@ text-align: center;
 .showOneContainer {
   display: flex;
   flex-flow: row;
-  justify-content: space-evenly;
+  height: 90vh;
+  /* justify-content: space-evenly; */
+  
 }
 
 /* Left Pane -- This Movie's Poster */
 .thisMoviePosterPane {
-  border: 2px solid black;
-  height: 500px;
-  width: 250px;
+  border: 4px solid #1A1A1D;
+  height: 50vh;
+  width: 19vw;
+  margin: 8vh 5vh 4vh 35vh;
+  
 }
 
 /* Center Pane */
 .showOneCenterPane {
-  border: 2px solid black;
-  height: 500px;
-  width: 500px;
+  border: 2px solid #222;
+  height: 60vh;
+  width: 40vw;
+  margin-top: 8vh;
+  
 }
 /* This Movie's Details */
 .thisMovieTitle {
   text-align: center;
+  /* border: solid purple; */
 }
 .thisMovieSynopsis {
-  border: 1px solid;
-  margin: 20px 20px 20px 20px;
+  /* border: 1px solid; */
+  margin: 5vh;
+  overflow: scroll;
+  padding: 1vh;
+}
+p{
+  font-size: 16pt;
 }
 .thisMovieCast {
-  border: 1px solid;
-  margin: 20px 20px 20px 20px;
+  /* border: 1px dashed navy; */
+  margin: 5vh;
 }
 .thisMovieInfo {
-  border: 1px solid;
-  margin: 20px 20px 20px 20px;
+  /* border: 1px solid; */
+  margin: 3vh;
+  height: 40vh;
+  width: 34vw;
+  padding: 2vh;
+  font-size: 20pt;
+
+  
+}
+.H1-div-container{
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 2px solid;
+  margin: 2vh;
+  background-color:#6f2232;
+  color: #1a1a1d;
+  border-radius: 10px;
 }
 
 /* Right Pane -- User Reviews */
 .userReviewContainer {
-  border: 2px solid black;
-  height: 500px;
-  width: 350px;
+  /* border: 2px solid; */
+  height: 60vh;
+  width: 34vw;
+  padding: 2vh;
+  margin: 4vh;
+  position: absolute;
+  z-index: 10;
+  font-size: 20pt;
+  /* background-color: #1A1A1D */
+  width: 30vw;
+
 }
+
 .userReviewHeader {
+  /* border: dotted 2px maroon; */
   text-align: center;
 }
+
+
 .aUserReview {
-  border: 1px solid black;
-  margin: 20px 20px 20px 20px;
+  border: 1px solid blue;
+  margin: 5vh;
+  font-size: 16pt;
 }
 
 .posters {
+  /* border: dotted red; */
   height: 280px;
   width: 180px;
 }

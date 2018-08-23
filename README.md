@@ -8,10 +8,10 @@
 
 
 ## Frameworks Used
-##### Javascript ES6, Node.js, Express.js, React, PostgreSQL, CSS, HTML.
+##### Javascript ES6, Node.js, Express.js, React, PostgreSQL, CSS3, HTML5.
 
 ## Dependencies Used
-##### PG-Promise, Morgan, Body-Parser, Nodemon, Method-Override, CORS
+##### PG-Promise
 
 ## API Used
 ##### [TMDB API](https://www.themoviedb.org/documentation/api)
@@ -47,6 +47,10 @@
 #### User Profile Page
 ![screen shot 2018-08-20 at 13 06 33](https://user-images.githubusercontent.com/40147976/44355829-a15d9e80-a47b-11e8-84ca-757fb63b661a.png)
 
+## Code snap
 
+## Code challeges
+
+## Refrences
 
 ##### General Assembly, WDI Lambda 2018.

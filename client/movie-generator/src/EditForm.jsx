@@ -33,7 +33,7 @@ class EditForm extends Component {
   }
 
   render() {
-    const { review, movie_id } = this.state;
+    const { review } = this.state;
 
     return (
       <div>

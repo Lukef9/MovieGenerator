@@ -40,7 +40,7 @@ class SearchForm extends Component {
             <button className="Search-submit" type="submit">
             <span className="Icon">
             <svg aria-hidden="true" data-prefix="fas" data-icon="search" 
-            class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" 
+            className="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" 
             viewBox="0 0 512 512">
             <path fill="currentColor" 
             d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 
