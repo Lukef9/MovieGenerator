@@ -74,8 +74,24 @@ export async function registerUser(user) {
         'Content-Type': 'application/json',
       },
     };
-    const userToken = await fetch(`${BE_URL}/register`, opts);
-    return userToken;
+    const userToken = await fetch(`${BE_URL}/auth/register`, opts);
+    return userToken.json();
+  } catch (e) {
+    throw (e);
+  }
+}
+
+export async function login(user) {
+  try {
+    const opts = {
+      method: 'POST',
+      body: JSON.stringify(user),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+    const userToken = await fetch(`${BE_URL}/auth/login`, opts);
+    return userToken.json();
   } catch (e) {
     throw (e);
   }

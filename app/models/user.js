@@ -12,7 +12,7 @@ module.exports = {
   },
 
   create(user) {
-    const passDigest = bcrypt.hashSync(user.password, process.env.SALT);
+    const passDigest = bcrypt.hashSync(user.password, 11);
     return db.one(`
     INSERT INTO users (username, pass_digest, email)
     VALUES ($1, $2, $3)
