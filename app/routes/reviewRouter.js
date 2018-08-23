@@ -14,7 +14,7 @@ router.get('/:id',
   reviewController.getOneReview,
   (req, res) => res.json({ reviews: res.locals.data }));
 
-router.put('/:id/edit',
+router.put('/:id',
   reviewController.updateReview,
   (req, res) => res.json({ reviews: res.locals.data }));
 

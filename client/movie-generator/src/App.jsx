@@ -13,6 +13,7 @@ import {
   fetchReviews,
   saveReview,
   updateReview,
+  destroyReview,
 } from './services/api';
 
 
@@ -32,13 +33,21 @@ class App extends Component {
     this.showReviews = this.showReviews.bind(this);
     this.createReview = this.createReview.bind(this);
     this.editReview = this.editReview.bind(this);
+    this.deleteReview = this.deleteReview.bind(this);
   }
 
 
   componentDidMount() {
+    this.getMovies();
+    this.getReviews();
+  }
+
+  getMovies() {
     fetchMovies()
       .then(movieData => this.setState({ movies: movieData.movies }));
+  }
 
+  getReviews() {
     fetchReviews()
       .then(reviewData => this.setState({ reviews: reviewData.reviews }));
   }
@@ -67,7 +76,7 @@ class App extends Component {
 
   async createReview(review) {
     const reviewData = await saveReview(review);
-    this.fetchReviews();
+    this.getReviews();
     this.setState({
       currentView: '', /* show one */
       selectedReviews: reviewData.reviews,
@@ -76,11 +85,16 @@ class App extends Component {
 
   async editReview(review) {
     const reviewData = await updateReview(review);
-    this.fetchReviews();
+    this.getReviews();
     this.setState({
       currentView: '',
       selectedReviews: reviewData.reviews,
     });
+  }
+
+  async deleteReview(id) {
+    await destroyReview(id);
+    this.getReviews();
   }
 
   // renderCurrentView() {
@@ -103,12 +117,21 @@ class App extends Component {
   // }
 
   render() {
+    const { movies, reviews, show } = this.state;
+
     return (
       <main className="App">
         <Header />
         <SearchForm />
-        {false ? <Homepage movies={this.state.movies} show={this.state.show} toggle={this.showModal} /> : ''}
-        {this.state.movies&&this.state.reviews ? <ShowOne movie={this.state.movies[0]} reviews={this.state.reviews} /> : ''}
+        {false ? <Homepage movies={movies} show={show} toggle={this.showModal} /> : ''}
+        {movies && reviews
+          ? <ShowOne 
+              movie={movies[0]} 
+              reviews={reviews} 
+              onCreate={this.createReview}
+              onDelete={this.deleteReview}
+              onUpdate={this.editReview}
+              /> : ''}
         <Footer />
       </main>
 

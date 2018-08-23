@@ -36,6 +36,7 @@ export async function saveReview(review) {
 
 export async function updateReview(review) {
   try {
+    debugger;
     const opts = {
       method: 'PUT',
       body: JSON.stringify(review),
@@ -43,8 +44,24 @@ export async function updateReview(review) {
         'Content-Type': 'application/json',
       },
     };
-    const reviewData = await fetch(`${BE_URL}/reviews/${review.id}`, opts);
+    const reviewData = await fetch(`${BE_URL}/reviews/${review.review_id}`, opts);
+    debugger;
     return reviewData.json();
+  } catch (e) {
+    throw (e);
+  }
+}
+
+export async function destroyReview(id) {
+  try {
+    const opts = {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+    const review = await fetch(`${BE_URL}/reviews/${id}`, opts);
+    return review;
   } catch (e) {
     throw (e);
   }

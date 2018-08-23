@@ -1,11 +1,13 @@
 import React from 'react';
+import CreateReviewForm from './UserReviewForm';
+import EditForm from './EditForm';
 
-function ShowOne({movie, reviews}) {
+function ShowOne({ movie, reviews, onCreate, onDelete, onUpdate }) {
     return (
         <div className="showOneContainer">
             <div className="thisMoviePosterPane">
               <h1>Movie Poster Here</h1>
-              <img src={movie.img} alt={movie.titele} />
+              <img src={movie.img} alt={movie.title} />
             </div>
             <div className="showOneCenterPane">
             <h1 className="thisMovieTitle">Title</h1>
@@ -35,11 +37,16 @@ function ShowOne({movie, reviews}) {
               <h1 className="userReviewHeader">User Reviews</h1>
               {
                 reviews.filter(review => review.movie_id === movie.movie_id).map(review => (
-                  <div className="aUserReview">{review.review_desc}</div>
+                  <div>
+                    <div className="aUserReview">
+                      {review.review_desc}
+                    </div>
+                    <button onClick={() => onDelete(review.review_id)}>Delete Review</button>
+                    <EditForm review={review} onUpdate={onUpdate} />
+                  </div>
                 ))
               }
-
-              
+              <CreateReviewForm movie={movie.movie_id} onCreate={onCreate} />
             </div>
           </div>
     );
