@@ -5,6 +5,7 @@ import SearchForm from './SearchForm';
 import Header from './Header';
 import Footer from './Footer';
 import MovieModal from './MovieModal';
+import EditReview from './EditReview';
 
 import {
   fetchMovies,
@@ -101,26 +102,15 @@ class App extends Component {
   // }
 
   render() {
+    const { reviews } = this.state;
+
     return (
       <main className="App">
-        <Header />
-        <SearchForm />
-        <section className="Main-section">
-          <h2 className="Header-bar">Top 10 Movies</h2>
-
-          <div className="collected-divs">
-
-            {/* this is the div for the movie synopsis */}
-            <div className="Top-movies" id="showModal" onClick={this.showModal}>
-              This is your selected movie
-              {this.state.show ? <MovieModal /> : ''}
-            </div>
-
-          </div>
-        </section>
-        <Footer />
+        <EditReview
+          onUpdate={this.editReview}
+          review={reviews}
+        />
       </main>
-
     );
   }
 }
