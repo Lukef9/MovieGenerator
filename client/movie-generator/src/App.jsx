@@ -70,6 +70,7 @@ class App extends Component {
   }
 
   toggleCurrentPane(evt) {
+    debugger;
     const name = evt.target.name;
     this.setState((prevState) => {
       prevState.currentPane = name;
@@ -162,7 +163,7 @@ class App extends Component {
       <main className="App">
         <Header />
         <SearchForm />
-        {true ? <Homepage movies={movies} show={show} toggle={this.showModal} /> : ''}
+        {false ? <Homepage movies={movies} show={show} toggle={this.showModal} /> : ''}
         {movies && reviews
           ? <ShowOne
             showEditForm={this.showEditForm}

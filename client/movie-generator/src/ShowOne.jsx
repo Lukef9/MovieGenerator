@@ -81,10 +81,10 @@ function ShowOne({ showEditForm, editShow, editThisReview, movie, reviews, onCre
 {/* this div contains the cast and summary info */}
             <div className="showOneCenterPane">
             <div className="H1-div-container">
-              <div><h1 className="thisMovieTitle" name="left" onClick={(evt) => toggleCurrentPane(evt)}> Movie Title </h1></div>
+              <div ><button className="thisMovieTitle" name="left" onClick={(evt) => toggleCurrentPane(evt)}> Movie Title </button></div>
               
-              <div><h1 name="center" onClick={(evt) => toggleCurrentPane(evt)}>Info</h1></div>
-              <div><h1 className="userReviewHeader" name="right" onClick={(evt) => toggleCurrentPane(evt)}>Reviews</h1></div>
+              <div><button name="center" onClick={(evt) => toggleCurrentPane(evt)}>Info</button></div>
+              <div><button className="userReviewHeader" name="right" onClick={(evt) => toggleCurrentPane(evt)}>Reviews</button></div>
 
               </div>
               {/* left */}
