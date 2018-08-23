@@ -1,7 +1,7 @@
 import React from 'react';
 import CreateReviewForm from './UserReviewForm';
 
-function ShowOne({ movie, reviews, onCreate }) {
+function ShowOne({ movie, reviews, onCreate, onDelete }) {
     return (
         <div className="showOneContainer">
             <div className="thisMoviePosterPane">
@@ -36,7 +36,12 @@ function ShowOne({ movie, reviews, onCreate }) {
               <h1 className="userReviewHeader">User Reviews</h1>
               {
                 reviews.filter(review => review.movie_id === movie.movie_id).map(review => (
-                  <div className="aUserReview">{review.review_desc}</div>
+                  <div>
+                    <div className="aUserReview">
+                      {review.review_desc}
+                    </div>
+                    <span onClick={() => onDelete(review.review_id)}>Delete Review</span>
+                  </div>
                 ))
               }
               <CreateReviewForm movie={movie.movie_id} onCreate={onCreate} />

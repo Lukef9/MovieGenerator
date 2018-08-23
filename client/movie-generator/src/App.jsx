@@ -124,7 +124,13 @@ class App extends Component {
         <Header />
         <SearchForm />
         {false ? <Homepage movies={movies} show={show} toggle={this.showModal} /> : ''}
-        {movies && reviews ? <ShowOne movie={movies[0]} reviews={reviews} onCreate={this.createReview} /> : ''}
+        {movies && reviews
+          ? <ShowOne 
+              movie={movies[0]} 
+              reviews={reviews} 
+              onCreate={this.createReview}
+              onDelete={this.deleteReview} 
+              /> : ''}
         <Footer />
       </main>
 
