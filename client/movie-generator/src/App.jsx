@@ -70,7 +70,6 @@ class App extends Component {
   }
 
   toggleCurrentPane(evt) {
-    debugger;
     const name = evt.target.name;
     this.setState((prevState) => {
       prevState.currentPane = name;
