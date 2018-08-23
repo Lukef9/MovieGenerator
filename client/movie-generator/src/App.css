@@ -232,7 +232,7 @@ text-align: center;
   height: 60vh;
   width: 30vw;
   padding: 2vh;
-  display: none;
+
 }
 .H1-div-container{
   display: flex;
@@ -246,7 +246,7 @@ text-align: center;
   border: 2px solid orange;
   height: 60vh;
   width: 30vw;
-  display: none;
+  
 }
 
 .userReviewHeader {

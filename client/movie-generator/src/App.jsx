@@ -33,6 +33,7 @@ class App extends Component {
       email: null,
       editShow: false,
       editThisReview: null,
+      currentPane: 'left',
     };
     this.showModal = this.showModal.bind(this);
     this.showEditForm = this.showEditForm.bind(this);
@@ -41,6 +42,7 @@ class App extends Component {
     this.createReview = this.createReview.bind(this);
     this.editReview = this.editReview.bind(this);
     this.deleteReview = this.deleteReview.bind(this);
+    this.toggleCurrentPane = this.toggleCurrentPane.bind(this);
   }
 
 
@@ -63,6 +65,14 @@ class App extends Component {
   showModal() {
     this.setState((prevState) => {
       prevState.show = !prevState.show;
+      return prevState;
+    });
+  }
+
+  toggleCurrentPane(evt) {
+    const name = evt.target.name;
+    this.setState((prevState) => {
+      prevState.currentPane = name;
       return prevState;
     });
   }
@@ -163,6 +173,8 @@ class App extends Component {
             onCreate={this.createReview}
             onDelete={this.deleteReview}
             onUpdate={this.editReview}
+            toggleCurrentPane={this.toggleCurrentPane}
+            currentPane={this.state.currentPane}
             /> : ''}
         <Footer />
       </main>
