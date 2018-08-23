@@ -90,6 +90,8 @@ class App extends Component {
     });
   }
 
+  
+
   // renderCurrentView() {
   //   const { currentView } = this.state;
   //   const { movies, reviews, selectedMovie, selectedReviews } = this.state;

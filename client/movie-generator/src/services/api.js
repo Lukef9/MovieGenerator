@@ -49,3 +49,18 @@ export async function updateReview(review) {
     throw (e);
   }
 }
+
+export async function destroyReview(id) {
+  try {
+    const opts = {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+    const review = await fetch(`${BE_URL}/reviews/${id}`, opts);
+    return review;
+  } catch (e) {
+    throw (e);
+  }
+}
