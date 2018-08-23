@@ -42,7 +42,6 @@ module.exports = {
         movie_id,
         // rating,
       } = req.body;
-      debugger;
       const modifiedReview = {
         review_id,
         review_desc,
@@ -51,7 +50,6 @@ module.exports = {
       };
       const updatedReview = await db.updateMoviewReview(modifiedReview);
       res.locals.data = updatedReview;
-      debugger;
       next();
     } catch (e) {
       throw (e);

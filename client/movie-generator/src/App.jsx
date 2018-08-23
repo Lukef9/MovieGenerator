@@ -31,8 +31,11 @@ class App extends Component {
       show: false,
       username: null,
       email: null,
+      editShow: false,
+      editThisReview: null,
     };
     this.showModal = this.showModal.bind(this);
+    this.showEditForm = this.showEditForm.bind(this);
     this.showMovie = this.showMovie.bind(this);
     this.showReviews = this.showReviews.bind(this);
     this.createReview = this.createReview.bind(this);
@@ -60,6 +63,15 @@ class App extends Component {
   showModal() {
     this.setState((prevState) => {
       prevState.show = !prevState.show;
+      return prevState;
+    });
+  }
+
+  showEditForm(evt) {
+    const name = parseInt(evt.target.name);
+    this.setState((prevState) => {
+      prevState.editShow = !prevState.editShow;
+      prevState.editThisReview = name;
       return prevState;
     });
   }
@@ -142,13 +154,16 @@ class App extends Component {
         <SearchForm />
         {false ? <Homepage movies={movies} show={show} toggle={this.showModal} /> : ''}
         {movies && reviews
-          ? <ShowOne 
-              movie={movies[0]} 
-              reviews={reviews} 
-              onCreate={this.createReview}
-              onDelete={this.deleteReview}
-              onUpdate={this.editReview}
-              /> : ''}
+          ? <ShowOne
+            showEditForm={this.showEditForm}
+            editShow={this.state.editShow}
+            editThisReview={this.state.editThisReview}
+            movie={movies[0]} 
+            reviews={reviews} 
+            onCreate={this.createReview}
+            onDelete={this.deleteReview}
+            onUpdate={this.editReview}
+            /> : ''}
         <Footer />
       </main>
 

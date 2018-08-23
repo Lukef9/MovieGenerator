@@ -15,13 +15,11 @@ class EditForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger;
     const reviewData = {
       review_desc: this.state.review,
       movie_id: this.state.movie_id,
       review_id: this.props.review.review_id,
     };
-    debugger;
     this.props.onUpdate(reviewData);
   }
 
