@@ -64,3 +64,19 @@ export async function destroyReview(id) {
     throw (e);
   }
 }
+
+export async function registerUser(user) {
+  try {
+    const opts = {
+      method: 'POST',
+      body: JSON.stringify(user),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+    const userToken = await fetch(`${BE_URL}/register`, opts);
+    return userToken;
+  } catch (e) {
+    throw (e);
+  }
+}
