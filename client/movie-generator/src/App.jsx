@@ -162,7 +162,7 @@ class App extends Component {
       <main className="App">
         <Header />
         <SearchForm />
-        {false ? <Homepage movies={movies} show={show} toggle={this.showModal} /> : ''}
+        {true ? <Homepage movies={movies} show={show} toggle={this.showModal} /> : ''}
         {movies && reviews
           ? <ShowOne
             showEditForm={this.showEditForm}
