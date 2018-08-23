@@ -36,7 +36,6 @@ export async function saveReview(review) {
 
 export async function updateReview(review) {
   try {
-    debugger;
     const opts = {
       method: 'PUT',
       body: JSON.stringify(review),
@@ -45,7 +44,6 @@ export async function updateReview(review) {
       },
     };
     const reviewData = await fetch(`${BE_URL}/reviews/${review.review_id}`, opts);
-    debugger;
     return reviewData.json();
   } catch (e) {
     throw (e);
