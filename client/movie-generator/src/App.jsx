@@ -37,7 +37,7 @@ class App extends Component {
       editShow: false,
       editThisReview: null,
       currentPane: 'left',
-      currentPage: 'one',
+      currentPage: 'home',
     };
     this.showModal = this.showModal.bind(this);
     this.showEditForm = this.showEditForm.bind(this);
@@ -50,6 +50,7 @@ class App extends Component {
     this.loginUser = this.loginUser.bind(this);  //
     this.logUser = this.logUser.bind(this);  //
     this.toggleCurrentPane = this.toggleCurrentPane.bind(this);
+    this.toggleCurrentPage = this.toggleCurrentPage.bind(this);
   }
 
   componentDidMount() {
@@ -79,6 +80,14 @@ class App extends Component {
     const name = evt.target.name;
     this.setState((prevState) => {
       prevState.currentPane = name;
+      return prevState;
+    });
+  }
+
+  toggleCurrentPage(evt) {
+    const name = evt.target.name;
+    this.setState((prevState) => {
+      prevState.currentPage = name;
       return prevState;
     });
   }
@@ -158,30 +167,11 @@ class App extends Component {
     this.logUser(userToken);
   }
 
-  // renderCurrentView() {
-  //   const { currentView } = this.state;
-  //   const { movies, reviews, selectedMovie, selectedReviews } = this.state;
-
-  // switch (currentView) {
-  //   case 'Movie Index':
-  //     return <MovieIndex movies={movies}/>;
-  //   case 'Show One':
-  //     return (<Movie
-  //       selectedMovie={selectedMovie}
-  //       showMovie={this.showMovie}
-  //       selectedReviews={selectedReviews}
-  //       showReviews={this.showReviews}
-  //       reviews={reviews}
-  //       onCreate={this.createReview}
-  //       onUpdate={this.updateReview} />);
-  // }
-  // }
-
   choosePage() {
     const { currentPage } = this.state;
     switch (currentPage) {
       case 'home':
-        return <Homepage movies={this.state.movies} show={this.state.show} toggle={this.showModal}  />
+        return <Homepage movies={this.state.movies} show={this.state.show} toggle={this.showModal} toShowOne={this.toggleCurrentPage} />
       case 'one':
         return (this.state.movies ? <ShowOne
           showEditForm={this.showEditForm}
@@ -208,19 +198,6 @@ class App extends Component {
         {/* <Header />
         <SearchForm />
         {this.choosePage()}
-        {/* {movies && reviews
-          ? <ShowOne
-            showEditForm={this.showEditForm}
-            editShow={this.state.editShow}
-            editThisReview={this.state.editThisReview}
-            movie={movies[0]} 
-            reviews={reviews} 
-            onCreate={this.createReview}
-            onDelete={this.deleteReview}
-            onUpdate={this.editReview}
-            toggleCurrentPane={this.toggleCurrentPane}
-            currentPane={this.state.currentPane}
-            /> : ''} */}
         <Footer />
       </main>
 
