@@ -36,15 +36,22 @@ module.exports = {
 
   async updateReview(req, res, next) {
     try {
-      const { review_desc, movie_id, rating } = req.body;
-      const modifiedReview = {
-        review_id: req.params.id,
+      const {
+        review_id,
         review_desc,
         movie_id,
-        rating,
+        // rating,
+      } = req.body;
+      debugger;
+      const modifiedReview = {
+        review_id,
+        review_desc,
+        movie_id,
+        // rating,
       };
       const updatedReview = await db.updateMoviewReview(modifiedReview);
       res.locals.data = updatedReview;
+      debugger;
       next();
     } catch (e) {
       throw (e);
