@@ -44,7 +44,6 @@ function ShowOne({ showEditForm, editShow, editThisReview, movie, reviews, onCre
 
 {/* this is where the user review container info starts */}
             <div className="userReviewContainer">
-            <h1 className="userReviewHeader">User Reviews</h1>
             {
               reviews.filter(review => review.movie_id === movie.movie_id).map((review) => (
                 <div key={review.review_id}>
