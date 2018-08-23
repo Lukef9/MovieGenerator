@@ -1,11 +1,11 @@
 import React from 'react';
 
-function ShowOne({movie, reviews}) {
+function ShowOne({ movie, reviews }) {
     return (
         <div className="showOneContainer">
             <div className="thisMoviePosterPane">
               <h1>Movie Poster Here</h1>
-              <img src={movie.img} alt={movie.titele} />
+              <img src={movie.img} alt={movie.title} />
             </div>
             <div className="showOneCenterPane">
             <h1 className="thisMovieTitle">Title</h1>

@@ -103,12 +103,14 @@ class App extends Component {
   // }
 
   render() {
+    const { movies, reviews, show } = this.state;
+
     return (
       <main className="App">
         <Header />
         <SearchForm />
-        {false ? <Homepage movies={this.state.movies} show={this.state.show} toggle={this.showModal} /> : ''}
-        {this.state.movies&&this.state.reviews ? <ShowOne movie={this.state.movies[0]} reviews={this.state.reviews} /> : ''}
+        {false ? <Homepage movies={movies} show={show} toggle={this.showModal} /> : ''}
+        {movies && reviews ? <ShowOne movie={movies[0]} reviews={reviews} /> : ''}
         <Footer />
       </main>
 
