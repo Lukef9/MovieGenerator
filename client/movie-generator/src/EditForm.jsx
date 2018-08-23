@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class EditForm extends Component {
   constructor(props) {
     super(props);
-    const { review, movie_id } = props;
+    const { review } = props;
     this.state = {
       review: review.review_desc,
       movie_id: review.movie_id,
@@ -34,7 +34,7 @@ class EditForm extends Component {
   }
 
   render() {
-    const { review, movie_id } = this.state;
+    const { review } = this.state;
 
     return (
       <div>

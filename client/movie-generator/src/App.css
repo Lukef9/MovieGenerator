@@ -189,54 +189,78 @@ text-align: center;
 .showOneContainer {
   display: flex;
   flex-flow: row;
-  justify-content: space-evenly;
+  height: 90vh;
+  /* justify-content: space-evenly; */
+  border: solid red;
+
 }
 
 /* Left Pane -- This Movie's Poster */
 .thisMoviePosterPane {
-  border: 2px solid black;
-  height: 500px;
-  width: 250px;
+  border: 2px solid rgb(155, 54, 54);
+  height: 50vh;
+  width: 19vw;
+  margin: 8vh 5vh 4vh 35vh;
+  
 }
 
 /* Center Pane */
 .showOneCenterPane {
-  border: 2px solid black;
-  height: 500px;
-  width: 500px;
+  border: 3px solid;
+  height: 60vh;
+  width: 40vw;
+  margin-top: 8vh;
+  
 }
 /* This Movie's Details */
 .thisMovieTitle {
   text-align: center;
+  /* border: solid purple; */
 }
 .thisMovieSynopsis {
-  border: 1px solid;
-  margin: 20px 20px 20px 20px;
+  /* border: 1px solid; */
+  margin: 5vh;
+  overflow: scroll;
 }
 .thisMovieCast {
-  border: 1px solid;
-  margin: 20px 20px 20px 20px;
+  /* border: 1px dashed navy; */
+  margin: 5vh;
 }
 .thisMovieInfo {
   border: 1px solid;
-  margin: 20px 20px 20px 20px;
+  margin: 3vh;
+  height: 60vh;
+  width: 30vw;
+  padding: 2vh;
+  display: none;
+}
+.H1-div-container{
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 2px solid;
+  margin: 2vh;
 }
 
 /* Right Pane -- User Reviews */
 .userReviewContainer {
-  border: 2px solid black;
-  height: 500px;
-  width: 350px;
+  border: 2px solid orange;
+  height: 60vh;
+  width: 30vw;
+  display: none;
 }
+
 .userReviewHeader {
+  /* border: dotted 2px maroon; */
   text-align: center;
 }
+
 .aUserReview {
-  border: 1px solid black;
-  margin: 20px 20px 20px 20px;
+  border: 1px solid blue;
+  margin: 5vh;
 }
 
 .posters {
+  border: dotted red;
   height: 280px;
   width: 180px;
 }

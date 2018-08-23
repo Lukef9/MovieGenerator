@@ -4,39 +4,44 @@ import EditForm from './EditForm';
 
 function ShowOne({ movie, reviews, onCreate, onDelete, onUpdate }) {
     return (
+    // outside div for the whole show one page
         <div className="showOneContainer">
             <div className="thisMoviePosterPane">
-              <h1>Movie Poster Here</h1>
-              <img src={movie.img} alt={movie.title} />
+              <img src={movie.img} alt={movie.title} height={ '400vh' } />
             </div>
+
+{/* this div contains the cast and summary info */}
             <div className="showOneCenterPane">
-            <h1 className="thisMovieTitle">Title</h1>
+            <div className="H1-div-container">
+              <div><h1 className="thisMovieTitle"> Movie Title</h1></div>
+              
+              <div><h1>Info</h1></div>
+              <div><h1 className="userReviewHeader">Reviews</h1></div>
+
+              </div>
+
               <div className="thisMovieSynopsis">
-                <h3>Movie Summary</h3>
+                <h2>Synopsis</h2>
                 {movie.synopsis}
-                {/* <p>Four budding developers on an adventure to get CRUD working first before they can add more features.</p> */}
               </div>
               <div className="thisMovieCast">
-                <h3>Cast</h3>
+                <h2>Cast</h2>
                   {movie.movie_cast}
-                {/* <ul>
-                  <li>John</li>
-                  <li>Kenny</li>
-                  <li>Luke</li>
-                  <li>Tylaine</li>
-                </ul> */}
               </div>
+{/* the movie info div */}
               <div className="thisMovieInfo">
-                <h3>Movie Info</h3>
                 <p>Genre: {movie.genre}</p>
-                <p>Rating: {movie.movie_rating}/5</p>
+                <p>Rating: {movie.movie_rating}5</p>
                 <p>Year: {movie.year}</p>
               </div>
-            </div>
+
+{/* this is where the user review container info starts */}
             <div className="userReviewContainer">
-              <h1 className="userReviewHeader">User Reviews</h1>
               {
-                reviews.filter(review => review.movie_id === movie.movie_id).map(review => (
+                reviews
+                .filter(review => 
+                  review.movie_id === movie.movie_id)
+                .map(review => (
                   <div>
                     <div className="aUserReview">
                       {review.review_desc}
@@ -48,7 +53,9 @@ function ShowOne({ movie, reviews, onCreate, onDelete, onUpdate }) {
               }
               <CreateReviewForm movie={movie.movie_id} onCreate={onCreate} />
             </div>
+
           </div>
+    </div>
     );
 }
 
