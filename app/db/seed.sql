@@ -18,7 +18,7 @@ VALUES (
     'Drama',
     2014,
     'A washed-up actor, who once played an iconic superhero, attempts to revive his career by writing and starring in his very own Broadway play.',
-    'https://www.imdb.com/title/tt2562232/mediaviewer/rm3926180864',
+    'https://m.media-amazon.com/images/M/MV5BODAzNDMxMzAxOV5BMl5BanBnXkFtZTgwMDMxMjA4MjE@._V1_SY1000_CR0,0,674,1000_AL_.jpg',
     2
 );
 
@@ -40,7 +40,7 @@ VALUES (
     'Action, Crime, Drama',
     2008,
     'When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham. The Dark Knight must accept one of the greatest psychological and physical tests of his ability to fight injustice.',
-    'https://www.imdb.com/title/tt0468569/mediaviewer/rm4023877632',
+    'https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SY1000_CR0,0,675,1000_AL_.jpg',
     4
 );
 
@@ -51,7 +51,7 @@ VALUES (
     'Animation, Action, Drama',
     1988,
     'A secret military project endangers Neo-Tokyo when it turns a biker gang member into a rampaging psychic psychopath that only two teenagers and a group of psychics can stop.',
-    'https://www.imdb.com/title/tt0094625/mediaviewer/rm2245203200',
+    'https://m.media-amazon.com/images/M/MV5BM2ZiZTk1ODgtMTZkNS00NTYxLWIxZTUtNWExZGYwZTRjODViXkEyXkFqcGdeQXVyMTE2MzA3MDM@._V1_SY1000_CR0,0,675,1000_AL_.jpg',
     5
 );
 
@@ -62,7 +62,7 @@ VALUES (
     'Drama, Romance',
     1994,
     'The presidencies of Kennedy and Johnson, Vietnam, Watergate, and other history unfold through the perspective of an Alabama man with an IQ of 75.',
-    'https://www.imdb.com/title/tt0109830/mediaviewer/rm1954748672',
+    'https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg',
     6
 );
 
@@ -73,7 +73,7 @@ VALUES (
     'Adventure, Drama, Sci-Fi',
     2014,
     'A team of explorers travel through a wormhole in space in an attempt to ensure humanitys survival.',
-    'https://www.imdb.com/title/tt0816692/mediaviewer/rm4043724800',
+    'https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_SX675_AL_.jpg',
     7
 );
 
@@ -84,7 +84,7 @@ VALUES (
     'Animation, Adventure, Family',
     2008,
     'In the distant future, a small waste-collecting robot inadvertently embarks on a space journey that will ultimately decide the fate of mankind.',
-    'https://www.imdb.com/title/tt0910970/mediaviewer/rm1659211008',
+    'https://m.media-amazon.com/images/M/MV5BMjExMTg5OTU0NF5BMl5BanBnXkFtZTcwMjMxMzMzMw@@._V1_SY1000_CR0,0,674,1000_AL_.jpg',
     8
 );
 
@@ -95,7 +95,7 @@ VALUES (
     'Adventure, Drama, War',
     2009,
     'In Nazi-occupied France during World War II, a plan to assassinate Nazi leaders by a group of Jewish U.S. soldiers coincides with a theatre owners vengeful plans for the same.',
-    'https://www.imdb.com/title/tt0361748/mediaviewer/rm3163035648',
+    'https://m.media-amazon.com/images/M/MV5BOTJiNDEzOWYtMTVjOC00ZjlmLWE0NGMtZmE1OWVmZDQ2OWJhXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_SY1000_SX675_AL_.jpg',
     9
 );
 
@@ -106,15 +106,15 @@ VALUES (
     'Animation, Adventure, Comedy',
     2010,
     'The toys are mistakenly delivered to a day-care center instead of the attic right before Andy leaves for college, and its up to Woody to convince the other toys that they werent abandoned and to return home.',
-    'https://www.imdb.com/title/tt0435761/mediaviewer/rm3038678784',
+    'https://m.media-amazon.com/images/M/MV5BMTgxOTY4Mjc0MF5BMl5BanBnXkFtZTcwNTA4MDQyMw@@._V1_SY1000_CR0,0,707,1000_AL_.jpg',
     10
 );
 
 INSERT INTO reviews (review_desc, movie_id, rating)
-VALUES ('Perfect example of a re-vamp exectuion', 1, 1);
+VALUES ('Perfect example of a re-vamp exectuion', 1, 4);
 
 INSERT INTO reviews (review_desc, movie_id, rating)
-VALUES ('This movie rocks, I loved the idea and the actors', 2, 2);
+VALUES ('This movie rocks, I loved the idea and the actors', 2, 4);
 
 INSERT INTO reviews (review_desc, movie_id, rating)
 VALUES ('Funny movie', 3, 3);
@@ -126,16 +126,16 @@ INSERT INTO reviews (review_desc, movie_id, rating)
 VALUES ('A timeless classic animation movie.', 5, 5);
 
 INSERT INTO reviews (review_desc, movie_id, rating)
-VALUES ('RUN FORREST RUN', 6, 6);
+VALUES ('RUN FORREST RUN', 6, 5);
 
 INSERT INTO reviews (review_desc, movie_id, rating)
-VALUES ('Riveting and out of this world.', 7, 7);
+VALUES ('Riveting and out of this world.', 7, 4);
 
 INSERT INTO reviews (review_desc, movie_id, rating)
-VALUES ('Pixar does it again!', 8, 8);
+VALUES ('Pixar does it again!', 8, 4);
 
 INSERT INTO reviews (review_desc, movie_id, rating)
-VALUES ('Great movie!', 9, 9);
+VALUES ('Great movie!', 9, 4);
 
 INSERT INTO reviews (review_desc, movie_id, rating)
-VALUES ('I almost cried', 10, 10);
+VALUES ('I almost cried', 10, 5);
