@@ -13,6 +13,7 @@ import {
   fetchReviews,
   saveReview,
   updateReview,
+  destroyReview,
 } from './services/api';
 
 
@@ -32,6 +33,7 @@ class App extends Component {
     this.showReviews = this.showReviews.bind(this);
     this.createReview = this.createReview.bind(this);
     this.editReview = this.editReview.bind(this);
+    this.deleteReview = this.deleteReview.bind(this);
   }
 
 
@@ -90,7 +92,10 @@ class App extends Component {
     });
   }
 
-  
+  async deleteReview(id) {
+    await destroyReview(id);
+    this.getReviews();
+  }
 
   // renderCurrentView() {
   //   const { currentView } = this.state;
