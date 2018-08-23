@@ -12,7 +12,7 @@ function MovieModal({toggle}) {
         </header>
         <section className="modal-body">
           <figure className="movie-image">
-            <img />
+            {/* <img /> */}
           </figure>
           <div className="syn-rev-wrapper">
             <article className="synopsis">
