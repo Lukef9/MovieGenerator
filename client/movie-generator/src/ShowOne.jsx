@@ -1,6 +1,7 @@
 import React from 'react';
+import CreateReviewForm from './UserReviewForm';
 
-function ShowOne({ movie, reviews }) {
+function ShowOne({ movie, reviews, onCreate }) {
     return (
         <div className="showOneContainer">
             <div className="thisMoviePosterPane">
@@ -38,8 +39,7 @@ function ShowOne({ movie, reviews }) {
                   <div className="aUserReview">{review.review_desc}</div>
                 ))
               }
-
-              
+              <CreateReviewForm movie={movie.movie_id} onCreate={onCreate} />
             </div>
           </div>
     );

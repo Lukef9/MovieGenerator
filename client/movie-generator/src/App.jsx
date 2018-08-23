@@ -36,9 +36,16 @@ class App extends Component {
 
 
   componentDidMount() {
+    this.getMovies();
+    this.getReviews();
+  }
+
+  getMovies() {
     fetchMovies()
       .then(movieData => this.setState({ movies: movieData.movies }));
+  }
 
+  getReviews() {
     fetchReviews()
       .then(reviewData => this.setState({ reviews: reviewData.reviews }));
   }
@@ -67,7 +74,7 @@ class App extends Component {
 
   async createReview(review) {
     const reviewData = await saveReview(review);
-    this.fetchReviews();
+    this.getReviews();
     this.setState({
       currentView: '', /* show one */
       selectedReviews: reviewData.reviews,
@@ -76,7 +83,7 @@ class App extends Component {
 
   async editReview(review) {
     const reviewData = await updateReview(review);
-    this.fetchReviews();
+    this.getReviews();
     this.setState({
       currentView: '',
       selectedReviews: reviewData.reviews,
@@ -110,7 +117,7 @@ class App extends Component {
         <Header />
         <SearchForm />
         {false ? <Homepage movies={movies} show={show} toggle={this.showModal} /> : ''}
-        {movies && reviews ? <ShowOne movie={movies[0]} reviews={reviews} /> : ''}
+        {movies && reviews ? <ShowOne movie={movies[0]} reviews={reviews} onCreate={this.createReview} /> : ''}
         <Footer />
       </main>
 

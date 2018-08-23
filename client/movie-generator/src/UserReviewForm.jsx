@@ -3,9 +3,10 @@ import React, { Component } from 'react';
 class UserReviewForm extends Component {
   constructor(props) {
     super(props);
+    const { movie } = props;
     this.state = {
       review_desc: '',
-    //   movie_id: '',
+      movie_id: movie,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -55,7 +56,7 @@ class UserReviewForm extends Component {
             id="reviewField"
             placeholder="Write a Short Review"
             value={this.state.review_desc}
-            onChange={this.handleReviewDesc}
+            onChange={this.handleChange}
           />
 
           {/*
