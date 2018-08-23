@@ -1,8 +1,3 @@
-DROP DATABASE IF EXISTS movie_dev;
-CREATE DATABASE movie_dev;
-
-\c movie_dev
-
 DROP TABLE IF EXISTS reviews;
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS movies;

@@ -3,47 +3,44 @@ import React from 'react';
 import CreateReviewForm from './UserReviewForm';
 import EditForm from './EditForm';
 
+
 function chooseDisplay(review, onUpdate, editShow, evt) {
   const y = evt;
   const x = (editShow && review.review_id=== y? <EditForm review={review} onUpdate={onUpdate} /> : review.review_desc);
   return x;
 }
 
-function ShowOne({ showEditForm, editShow, editThisReview, movie, reviews, onCreate, onDelete, onUpdate }) {
+function showLeft(movie) {
     return (
-    // outside div for the whole show one page
-        <div className="showOneContainer">
-            <div className="thisMoviePosterPane">
-              <img src={movie.img} alt={movie.title} height={ '400vh' } />
-            </div>
+      <div>
+      <div className="thisMovieSynopsis">
+      <h2>Synopsis</h2>
+      {movie.synopsis}
+    </div>
+    <div className="thisMovieCast">
+      <h2>Cast</h2>
+        {movie.movie_cast}
+    </div>
+    </div>
+    )
+  }
 
-{/* this div contains the cast and summary info */}
-            <div className="showOneCenterPane">
-            <div className="H1-div-container">
-              <div><h1 className="thisMovieTitle"> Movie Title</h1></div>
-              
-              <div><h1>Info</h1></div>
-              <div><h1 className="userReviewHeader">Reviews</h1></div>
+  function showCenter(movie) {
+    return (
+      <div className="thisMovieInfo">
+        <p>Genre: {movie.genre}</p>
+        <p>Rating: {movie.movie_rating}5</p>
+        <p>Year: {movie.year}</p>
+      </div>
+    )
+  }
 
-              </div>
-
-              <div className="thisMovieSynopsis">
-                <h2>Synopsis</h2>
-                {movie.synopsis}
-              </div>
-              <div className="thisMovieCast">
-                <h2>Cast</h2>
-                  {movie.movie_cast}
-              </div>
-{/* the movie info div */}
-              <div className="thisMovieInfo">
-                <p>Genre: {movie.genre}</p>
-                <p>Rating: {movie.movie_rating}5</p>
-                <p>Year: {movie.year}</p>
-              </div>
 
 {/* this is where the user review container info starts */}
-            <div className="userReviewContainer">
+  function showRight(showEditForm, editShow, editThisReview, movie, reviews, onCreate, onDelete, onUpdate) {
+    return (
+<div className="userReviewContainer">
+            <h1 className="userReviewHeader">User Reviews</h1>
             {
               reviews.filter(review => review.movie_id === movie.movie_id).map((review) => (
                 <div key={review.review_id}>
@@ -58,6 +55,54 @@ function ShowOne({ showEditForm, editShow, editThisReview, movie, reviews, onCre
             }
             <CreateReviewForm movie={movie.movie_id} onCreate={onCreate} />
           </div>
+    )
+  }
+
+function choosePane(showEditForm, editShow, editThisReview, movie, reviews, onCreate, onDelete, onUpdate, currentPane) {
+  switch (currentPane) {
+    case 'left':
+      return showLeft(movie);
+    case 'center':
+      return showCenter(movie);
+    case 'right':
+      return showRight(showEditForm, editShow, editThisReview, movie, reviews, onCreate, onDelete, onUpdate);
+
+  }
+  
+}
+
+function ShowOne({ showEditForm, editShow, editThisReview, movie, reviews, onCreate, onDelete, onUpdate, toggleCurrentPane, currentPane }) {
+  debugger;  
+  return (
+    // outside div for the whole show one page
+        <div className="showOneContainer">
+            <div className="thisMoviePosterPane">
+              <img src={movie.img} alt={movie.title} height={ '400vh' } />
+            </div>
+
+{/* this div contains the cast and summary info */}
+            <div className="showOneCenterPane">
+            <div className="H1-div-container">
+              <div ><button className="thisMovieTitle" name="left" onClick={(evt) => toggleCurrentPane(evt)}> Movie Title </button></div>
+              
+              <div><button name="center" onClick={(evt) => toggleCurrentPane(evt)}>Info</button></div>
+              <div><button className="userReviewHeader" name="right" onClick={(evt) => toggleCurrentPane(evt)}>Reviews</button></div>
+
+              </div>
+              {/* left */}
+              {choosePane(showEditForm, editShow, editThisReview, movie, reviews, onCreate, onDelete, onUpdate, currentPane)}
+
+{/* the movie info div */}
+              {/* center */}
+              
+
+{/* this is where the user review container info starts */}
+            {/* right */}
+            
+            
+
+
+
         </div>
     </div>
     );

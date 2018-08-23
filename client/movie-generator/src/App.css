@@ -236,8 +236,9 @@ p{
   height: 40vh;
   width: 34vw;
   padding: 2vh;
-  display: none;
   font-size: 20pt;
+
+  
 }
 .H1-div-container{
   display: flex;
@@ -259,7 +260,8 @@ p{
   z-index: 10;
   font-size: 20pt;
   /* background-color: #1A1A1D */
-  display: none;
+  width: 30vw;
+
 }
 
 .userReviewHeader {
