@@ -40,7 +40,7 @@ function ShowOne({ movie, reviews, onCreate, onDelete }) {
                     <div className="aUserReview">
                       {review.review_desc}
                     </div>
-                    <span onClick={() => onDelete(review.review_id)}>Delete Review</span>
+                    <button onClick={() => onDelete(review.review_id)}>Delete Review</button>
                   </div>
                 ))
               }
