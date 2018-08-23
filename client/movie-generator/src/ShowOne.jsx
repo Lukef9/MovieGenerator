@@ -72,7 +72,6 @@ function choosePane(showEditForm, editShow, editThisReview, movie, reviews, onCr
 }
 
 function ShowOne({ showEditForm, editShow, editThisReview, movie, reviews, onCreate, onDelete, onUpdate, toggleCurrentPane, currentPane }) {
-  debugger;  
   return (
     // outside div for the whole show one page
         <div className="showOneContainer">
