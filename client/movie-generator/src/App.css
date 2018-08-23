@@ -1,12 +1,17 @@
 
 
 .App-logo {
-  height: 90px;
-  width: 250px;
-  border: solid blue;
+  height: 5vh;
+  width: 50vw;
+  border: 5px solid #6f2232;
+  margin: 1vh;
+  text-align: center;
+  padding: 4vh;
+  font-size: 20pt;
+  color: #4e4e50;
 }
 .App-header {
-  background-color: #222;
+  background-color: #1a1a1d;
   height: 110px;
   color: white;
   display: flex;
@@ -20,28 +25,30 @@
   padding-left: 250px;
 }
 .Register{
-  margin: 30px 2% 60px 50px;
-  height: 40px;
-  width: 130px;
-  background-color: navy;
-  padding-top: 15px;
+  margin: 4vh 2vh 2vw 9vw;
+  height: 5vh;
+  width: 8vw;
+  background-color:#6f2232;
+  padding-top: 2vh;
   border-radius: 15px;
   text-align: center;
+  color: #1a1a1d;
 }
 .Login{
-  height: 40px;
-  width: 120px;
-  margin: 30px 1% 60px 50px;
-  background-color: navy;
-  padding-top: 15px;
+  height: 5vh;
+  width: 8vw;
+  margin: 4vh 1vh 2vw 1vw;
+  background-color: #6f2232;
+  padding-top: 2vh;
   border-radius: 15px;
   text-align: center;
   font-size: 14pt;
+  color: #1a1a1d;
 }
 /* div that contains the search input bar */
 .Search-bar{
   height: 50px;
-  background-color: navy;
+  background-color: #6f2232;
   padding-top: 15px;
   text-align: center;
 
@@ -245,8 +252,9 @@ p{
   justify-content: space-evenly;
   border-bottom: 2px solid;
   margin: 2vh;
-  background-color: navy;
-  color: #ddd;
+  background-color:#6f2232;
+  color: #1a1a1d;
+  border-radius: 10px;
 }
 
 /* Right Pane -- User Reviews */
