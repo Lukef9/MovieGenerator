@@ -1,3 +1,4 @@
+/* eslint-disable*/
 import React, { Component } from 'react';
 import jwtDecode from 'jwt-decode';
 import './App.css';
@@ -23,7 +24,6 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentView: 'Movie Index',
       selectedMovie: '',
       selectedReviews: [],
       movies: null,
@@ -34,6 +34,7 @@ class App extends Component {
       editShow: false,
       editThisReview: null,
       currentPane: 'left',
+      currentPage: 'one',
     };
     this.showModal = this.showModal.bind(this);
     this.showEditForm = this.showEditForm.bind(this);
@@ -155,6 +156,27 @@ class App extends Component {
   // }
   // }
 
+  choosePage() {
+    const { currentPage } = this.state;
+    switch (currentPage) {
+      case 'home':
+        return <Homepage movies={this.state.movies} show={this.state.show} toggle={this.showModal} />
+      case 'one':
+        return <ShowOne
+          showEditForm={this.showEditForm}
+          editShow={this.state.editShow}
+          editThisReview={this.state.editThisReview}
+          movie={this.state.movies[0]} 
+          reviews={this.state.reviews} 
+          onCreate={this.createReview}
+          onDelete={this.deleteReview}
+          onUpdate={this.editReview}
+          toggleCurrentPane={this.toggleCurrentPane}
+          currentPane={this.state.currentPane}
+        /> 
+      }
+  }
+
   render() {
     const { movies, reviews, show } = this.state;
 
@@ -162,8 +184,8 @@ class App extends Component {
       <main className="App">
         <Header />
         <SearchForm />
-        {false ? <Homepage movies={movies} show={show} toggle={this.showModal} /> : ''}
-        {movies && reviews
+        {this.choosePage()}
+        {/* {movies && reviews
           ? <ShowOne
             showEditForm={this.showEditForm}
             editShow={this.state.editShow}
@@ -175,7 +197,7 @@ class App extends Component {
             onUpdate={this.editReview}
             toggleCurrentPane={this.toggleCurrentPane}
             currentPane={this.state.currentPane}
-            /> : ''}
+            /> : ''} */}
         <Footer />
       </main>
 
