@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import jwtDecode from 'jwt-decode';
 import './App.css';
-import SearchForm from './SearchForm';
+// import SearchForm from './SearchForm';
 // import LoginForm from './LoginForm';
-import Header from './Header';
-import Footer from './Footer';
-import Homepage from './Homepage';
-import ShowOne from './ShowOne';
+// import Header from './Header';
+// import Footer from './Footer';
+// import Homepage from './Homepage';
+// import ShowOne from './ShowOne';
 // import MovieModal from './MovieModal'; used in HomePage
+import RegisterForm from './UserRegistrationForm';
+import LoginForm from './LoginForm';
 
 import {
   fetchMovies,
@@ -16,6 +18,7 @@ import {
   updateReview,
   destroyReview,
   registerUser,
+  login,
 } from './services/api';
 
 
@@ -41,8 +44,10 @@ class App extends Component {
     this.createReview = this.createReview.bind(this);
     this.editReview = this.editReview.bind(this);
     this.deleteReview = this.deleteReview.bind(this);
+    this.createUser = this.createUser.bind(this);
+    this.loginUser = this.loginUser.bind(this);
+    this.logUser = this.logUser.bind(this);
   }
-
 
   componentDidMount() {
     this.getMovies();
@@ -90,11 +95,19 @@ class App extends Component {
     });
   }
 
-  logUser(user) {
+  populateStorage() {
+    localStorage.setItem('user', this.state.username);
+  }
+
+  logUser(userToken) {
+    debugger;
+    const userData = jwtDecode(userToken.token);
+    debugger;
     this.setState({
-      username: user.username,
-      email: user.email,
+      username: userData.username,
+      email: userData.email,
     });
+    this.populateStorage();
   }
 
   async createReview(review) {
@@ -121,9 +134,17 @@ class App extends Component {
   }
 
   async createUser(user) {
+    debugger;
     const userToken = await registerUser(user);
-    const userData = jwtDecode(userToken);
-    this.logUser(userData);
+    debugger;
+    this.logUser(userToken);
+  }
+
+  async loginUser(user) {
+    debugger;
+    const userToken = await login(user);
+    debugger;
+    this.logUser(userToken);
   }
 
   // renderCurrentView() {
@@ -150,7 +171,9 @@ class App extends Component {
 
     return (
       <main className="App">
-        <Header />
+        <RegisterForm onSubmit={this.createUser} />
+        <LoginForm onSubmit={this.loginUser} />
+        {/* <Header />
         <SearchForm />
         {false ? <Homepage movies={movies} show={show} toggle={this.showModal} /> : ''}
         {movies && reviews
@@ -164,7 +187,7 @@ class App extends Component {
             onDelete={this.deleteReview}
             onUpdate={this.editReview}
             /> : ''}
-        <Footer />
+        <Footer /> */}
       </main>
 
     );
