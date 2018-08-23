@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import jwtDecode from 'jwt-decode';
 import './App.css';
 import SearchForm from './SearchForm';
 // import LoginForm from './LoginForm';
@@ -14,6 +15,7 @@ import {
   saveReview,
   updateReview,
   destroyReview,
+  registerUser,
 } from './services/api';
 
 
@@ -27,6 +29,8 @@ class App extends Component {
       movies: null,
       reviews: null,
       show: false,
+      username: null,
+      email: null,
     };
     this.showModal = this.showModal.bind(this);
     this.showMovie = this.showMovie.bind(this);
@@ -74,6 +78,13 @@ class App extends Component {
     });
   }
 
+  logUser(user) {
+    this.setState({
+      username: user.username,
+      email: user.email,
+    });
+  }
+
   async createReview(review) {
     const reviewData = await saveReview(review);
     this.getReviews();
@@ -95,6 +106,12 @@ class App extends Component {
   async deleteReview(id) {
     await destroyReview(id);
     this.getReviews();
+  }
+
+  async createUser(user) {
+    const userToken = await registerUser(user);
+    const userData = jwtDecode(userToken);
+    this.logUser(userData);
   }
 
   // renderCurrentView() {

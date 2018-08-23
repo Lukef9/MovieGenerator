@@ -74,8 +74,8 @@ export async function registerUser(user) {
         'Content-Type': 'application/json',
       },
     };
-    const userData = await fetch(`${BE_URL}/register`, opts);
-    return userData.json();
+    const userToken = await fetch(`${BE_URL}/register`, opts);
+    return userToken;
   } catch (e) {
     throw (e);
   }
