@@ -36,7 +36,6 @@ export async function saveReview(review) {
 
 export async function updateReview(review) {
   try {
-    debugger;
     const opts = {
       method: 'PUT',
       body: JSON.stringify(review),
@@ -45,7 +44,6 @@ export async function updateReview(review) {
       },
     };
     const reviewData = await fetch(`${BE_URL}/reviews/${review.review_id}`, opts);
-    debugger;
     return reviewData.json();
   } catch (e) {
     throw (e);
@@ -62,6 +60,22 @@ export async function destroyReview(id) {
     };
     const review = await fetch(`${BE_URL}/reviews/${id}`, opts);
     return review;
+  } catch (e) {
+    throw (e);
+  }
+}
+
+export async function registerUser(user) {
+  try {
+    const opts = {
+      method: 'POST',
+      body: JSON.stringify(user),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+    const userToken = await fetch(`${BE_URL}/register`, opts);
+    return userToken;
   } catch (e) {
     throw (e);
   }
