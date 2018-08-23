@@ -1,7 +1,8 @@
 import React from 'react';
 import CreateReviewForm from './UserReviewForm';
+import EditForm from './EditForm';
 
-function ShowOne({ movie, reviews, onCreate, onDelete }) {
+function ShowOne({ movie, reviews, onCreate, onDelete, onUpdate }) {
     return (
         <div className="showOneContainer">
             <div className="thisMoviePosterPane">
@@ -41,6 +42,7 @@ function ShowOne({ movie, reviews, onCreate, onDelete }) {
                       {review.review_desc}
                     </div>
                     <button onClick={() => onDelete(review.review_id)}>Delete Review</button>
+                    <EditForm review={review} onUpdate={onUpdate} />
                   </div>
                 ))
               }

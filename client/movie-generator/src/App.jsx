@@ -129,7 +129,8 @@ class App extends Component {
               movie={movies[0]} 
               reviews={reviews} 
               onCreate={this.createReview}
-              onDelete={this.deleteReview} 
+              onDelete={this.deleteReview}
+              onUpdate={this.editReview}
               /> : ''}
         <Footer />
       </main>
