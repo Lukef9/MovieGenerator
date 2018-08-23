@@ -5,6 +5,7 @@ import SearchForm from './SearchForm';
 import Header from './Header';
 import Footer from './Footer';
 import Homepage from './Homepage';
+import ShowOne from './ShowOne';
 // import MovieModal from './MovieModal'; used in HomePage
 
 import {
@@ -23,7 +24,7 @@ class App extends Component {
       selectedMovie: '',
       selectedReviews: [],
       movies: null,
-      reviews: [],
+      reviews: null,
       show: false,
     };
     this.showModal = this.showModal.bind(this);
@@ -106,7 +107,8 @@ class App extends Component {
       <main className="App">
         <Header />
         <SearchForm />
-        <Homepage movies={this.state.movies} show={this.state.show} toggle={this.showModal} />
+        {false ? <Homepage movies={this.state.movies} show={this.state.show} toggle={this.showModal} /> : ''}
+        {this.state.movies&&this.state.reviews ? <ShowOne movie={this.state.movies[0]} reviews={this.state.reviews} /> : ''}
         <Footer />
       </main>
 
