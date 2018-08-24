@@ -5,7 +5,7 @@
 
 ### Project Squad
 ![screen shot 2018-08-23 at 23 16 23](https://user-images.githubusercontent.com/40147976/44564763-c92a5c00-a732-11e8-8ae1-a0089cccf4e2.png)
-#### Luke Fariselli, Tylaine Jeffrey, Jonathan Lora, Kendrick Zhang.
+##### Luke Fariselli, Tylaine Jeffrey, Jonathan Lora, Kendrick Zhang.
 
 
 ### Frameworks
