@@ -5,12 +5,12 @@ class UserRegistrationForm extends Component {
     super(props);
     this.state = {
       username: '',
-      pass_digest: '',
+      password: '',
       email: '',
     };
 
     this.handleUsername = this.handleChange.bind(this, 'username');
-    this.handlePassDigest = this.handleChange.bind(this, 'pass_digest');
+    this.handlePassword = this.handleChange.bind(this, 'password');
     this.handleEmail = this.handleChange.bind(this, 'email');
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -23,6 +23,7 @@ class UserRegistrationForm extends Component {
 
   handleSubmit(evt) {
     evt.preventDefault();
+    this.props.onSubmit(this.state);
   }
 
   render() {
@@ -42,8 +43,8 @@ class UserRegistrationForm extends Component {
             type="password"
             id="passwordInput"
             placeholder="Password"
-            value={this.state.pass_digest}
-            onChange={this.handlePassDigest}
+            value={this.state.password}
+            onChange={this.handlePassword}
           />
           <label htmlFor="emailInput">Email</label>
           <input

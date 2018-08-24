@@ -1,13 +1,16 @@
+/* eslint-disable*/
 import React, { Component } from 'react';
 import jwtDecode from 'jwt-decode';
 import './App.css';
-import SearchForm from './SearchForm';
+// import SearchForm from './SearchForm';
 // import LoginForm from './LoginForm';
-import Header from './Header';
-import Footer from './Footer';
-import Homepage from './Homepage';
-import ShowOne from './ShowOne';
-//import MovieModal from './MovieModal';
+// import Header from './Header';
+// import Footer from './Footer';
+// import Homepage from './Homepage';
+// import ShowOne from './ShowOne';
+// import MovieModal from './MovieModal'; used in HomePage
+import RegisterForm from './UserRegistrationForm';
+import LoginForm from './LoginForm';
 
 import {
   fetchMovies,
@@ -16,6 +19,7 @@ import {
   updateReview,
   destroyReview,
   registerUser,
+  login,
 } from './services/api';
 
 
@@ -23,7 +27,6 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentView: 'Movie Index',
       selectedMovie: '',
       selectedReviews: [],
       movies: null,
@@ -34,6 +37,7 @@ class App extends Component {
       editShow: false,
       editThisReview: null,
       currentPane: 'left',
+      currentPage: 'home',
     };
     this.showModal = this.showModal.bind(this);
     this.showEditForm = this.showEditForm.bind(this);
@@ -42,9 +46,12 @@ class App extends Component {
     this.createReview = this.createReview.bind(this);
     this.editReview = this.editReview.bind(this);
     this.deleteReview = this.deleteReview.bind(this);
+    this.createUser = this.createUser.bind(this); //
+    this.loginUser = this.loginUser.bind(this);  //
+    this.logUser = this.logUser.bind(this);  //
     this.toggleCurrentPane = this.toggleCurrentPane.bind(this);
+    this.toggleCurrentPage = this.toggleCurrentPage.bind(this);
   }
-
 
   componentDidMount() {
     this.getMovies();
@@ -77,6 +84,14 @@ class App extends Component {
     });
   }
 
+  toggleCurrentPage(evt) {
+    const name = evt.target.name;
+    this.setState((prevState) => {
+      prevState.currentPage = name;
+      return prevState;
+    });
+  }
+
   showEditForm(evt) {
     const name = parseInt(evt.target.name);
     this.setState((prevState) => {
@@ -100,11 +115,19 @@ class App extends Component {
     });
   }
 
-  logUser(user) {
+  populateStorage() {
+    localStorage.setItem('user', this.state.username);
+  }
+
+  logUser(userToken) {
+    debugger;
+    const userData = jwtDecode(userToken.token);
+    debugger;
     this.setState({
-      username: user.username,
-      email: user.email,
+      username: userData.username,
+      email: userData.email,
     });
+    this.populateStorage();
   }
 
   async createReview(review) {
@@ -131,51 +154,50 @@ class App extends Component {
   }
 
   async createUser(user) {
+    debugger;
     const userToken = await registerUser(user);
-    const userData = jwtDecode(userToken);
-    this.logUser(userData);
+    debugger;
+    this.logUser(userToken);
   }
 
-  // renderCurrentView() {
-  //   const { currentView } = this.state;
-  //   const { movies, reviews, selectedMovie, selectedReviews } = this.state;
+  async loginUser(user) {
+    debugger;
+    const userToken = await login(user);
+    debugger;
+    this.logUser(userToken);
+  }
 
-  // switch (currentView) {
-  //   case 'Movie Index':
-  //     return <MovieIndex movies={movies}/>;
-  //   case 'Show One':
-  //     return (<Movie
-  //       selectedMovie={selectedMovie}
-  //       showMovie={this.showMovie}
-  //       selectedReviews={selectedReviews}
-  //       showReviews={this.showReviews}
-  //       reviews={reviews}
-  //       onCreate={this.createReview}
-  //       onUpdate={this.updateReview} />);
-  // }
-  // }
+  choosePage() {
+    const { currentPage } = this.state;
+    switch (currentPage) {
+      case 'home':
+        return <Homepage movies={this.state.movies} show={this.state.show} toggle={this.showModal} toShowOne={this.toggleCurrentPage} />
+      case 'one':
+        return (this.state.movies ? <ShowOne
+          showEditForm={this.showEditForm}
+          editShow={this.state.editShow}
+          editThisReview={this.state.editThisReview}
+          movie={this.state.movies[0]} 
+          reviews={this.state.reviews} 
+          onCreate={this.createReview}
+          onDelete={this.deleteReview}
+          onUpdate={this.editReview}
+          toggleCurrentPane={this.toggleCurrentPane}
+          currentPane={this.state.currentPane}
+        /> : '')
+      }
+  }
 
   render() {
     const { movies, reviews, show } = this.state;
 
     return (
       <main className="App">
-        <Header />
+        <RegisterForm onSubmit={this.createUser} />
+        <LoginForm onSubmit={this.loginUser} />
+        {/* <Header />
         <SearchForm />
-        {false ? <Homepage movies={movies} show={show} toggle={this.showModal} /> : ''}
-        {movies && reviews
-          ? <ShowOne
-            showEditForm={this.showEditForm}
-            editShow={this.state.editShow}
-            editThisReview={this.state.editThisReview}
-            movie={movies[0]} 
-            reviews={reviews} 
-            onCreate={this.createReview}
-            onDelete={this.deleteReview}
-            onUpdate={this.editReview}
-            toggleCurrentPane={this.toggleCurrentPane}
-            currentPane={this.state.currentPane}
-            /> : ''}
+        {this.choosePage()}
         <Footer />
       </main>
 

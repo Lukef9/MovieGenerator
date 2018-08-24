@@ -1,4 +1,7 @@
-
+body {
+  width: 100%;
+  height: 100%;
+}
 
 .App-logo {
   height: 5vh;
@@ -92,14 +95,15 @@ TODO make this a search icon instead of a button */
   height: 300px;
   /* border: dotted red; */
   display: flex;
-  flex-flow: row;
+  flex-wrap: wrap;
+  /* flex-flow: row; */
   justify-content: space-evenly;
 }
 /* movies will pop up in this div */
 .Top-movies{
   height: 280px;
   width: 180px;
-  border: solid blue;
+  border: solid black 2px;
   margin: 5px;
 
 }
@@ -116,7 +120,7 @@ TODO make this a search icon instead of a button */
 TODO a for loop or map feature to show the divs based on movies */
 .more-collected-divs{
   height: 300px;
-  border: dotted red;
+  /* border: dotted red; */
 }
 /* homepage footer section */
 .Footer{

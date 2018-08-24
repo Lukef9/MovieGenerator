@@ -2,7 +2,7 @@ import React from 'react';
 // import Bulma from 'bulma';
 
 
-function MovieModal({toggle}) {
+function MovieModal({toggle, toShowOne}) {
   return (
     <div id="modal">
       <div type="button" onClick={toggle} className="closeModal">X</div>
@@ -26,6 +26,7 @@ function MovieModal({toggle}) {
               dolorum ipsa, cumque, aliquid harum consequatur saepe.
               Ratione, nemo vitae!
             </review>
+            <button name="one" onClick={(evt) => toShowOne(evt)}>See More Details</button>
           </div>
         </section>
       </div>

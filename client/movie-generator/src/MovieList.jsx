@@ -2,7 +2,7 @@ import React from 'react';
 import Movie from './Movie';
 import MovieModal from './MovieModal';
 
-function MovieList({ movies, show, toggle }) {
+function MovieList({ movies, show, toggle, toShowOne }) {
   let stuff;
   if (!movies) {
     stuff =(
@@ -22,7 +22,7 @@ function MovieList({ movies, show, toggle }) {
               </div>
             ))
           }
-          {show ? <MovieModal toggle={toggle} movies={movies} /> : ''}
+          {show ? <MovieModal toggle={toggle} movies={movies} toShowOne={toShowOne} /> : ''}
         </div>
       ) : (
         <div>
