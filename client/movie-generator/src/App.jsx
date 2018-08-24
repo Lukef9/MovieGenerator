@@ -50,39 +50,69 @@ class App extends Component {
     this.showTargetMovie = this.showTargetMovie.bind(this);
   }
 
-  componentDidMount() {
-    this.getMovies();
-    this.getReviews();
-  }
+    /** @func componentDidMount
+  * @desc calls the fetch statments to get data from api
+  * @param  - None
+  * @return None
+  */
+ componentDidMount() {
+  this.getMovies();
+  this.getReviews();
+}
 
-  getMovies() {
-    fetchMovies()
-      .then(movieData => this.setState({ movies: movieData.movies }));
-  }
+/** @func getMovies
+* @desc calls fetch movies from api.js and sets the returning data in state as movies
+* @param  -none
+* @return none just sets state
+*/
+getMovies() {
+  fetchMovies()
+    .then(movieData => this.setState({ movies: movieData.movies }));
+}
 
-  getReviews() {
-    fetchReviews()
-      .then(reviewData => this.setState({ reviews: reviewData.reviews }));
-  }
+/** @func getReviews
+* @desc calls fetch reviews from api.js and sets the returning data in state as reviews
+* @param  -none
+* @return none just sets state
+*/
+getReviews() {
+  fetchReviews()
+    .then(reviewData => this.setState({ reviews: reviewData.reviews }));
+}
 
-  // this is the show modal function
-  showModal() {
-    this.setState((prevState) => {
-      prevState.show = !prevState.show;
-      return prevState;
-    });
-  }
+/** @func showModal
+* @desc this is bound and passed to movie list in order to toggle when the modal shows 
+* by setting the state to the inverse of itself
+* @param  -none
+* @return none just sets state
+*/
+showModal() {
+  this.setState((prevState) => {
+    prevState.show = !prevState.show;
+    return prevState;
+  });
+}
 
-  // used in show one to change panes
-  toggleCurrentPane(evt) {
-    const name = evt.target.name;
-    this.setState((prevState) => {
-      prevState.currentPane = name;
-      return prevState;
-    });
-  }
+ /** @func toggleCurrentPane
+* @desc this is bound and passed to showOne in order to be able to switch between panes
+* by taking the evt.target and sets it into state depending on the name
+* @param  evt 
+* @return none just sets state
+*/
+toggleCurrentPane(evt) {
+  const name = evt.target.name;
+  this.setState((prevState) => {
+    prevState.currentPane = name;
+    return prevState;
+  });
+}
 
-  // changes what page we are on based on button clicks
+ /** @func toggleCurrentPage
+  * @desc this is bound and passed to ShowOne, MovieModal and Homepage in order to be able to switch between pages
+  * by taking the evt.target and sets it into state depending on the name
+  * @param  evt 
+  * @return none just sets state
+  */
   toggleCurrentPage(evt) {
     const name = evt.target.name;
     this.setState((prevState) => {
@@ -91,6 +121,12 @@ class App extends Component {
     });
   }
 
+  /** @func showTargetMovie
+  * @desc this is bound and passed to Homepage in order to be able to pass that data to MovieModal/ShowOne
+  * by taking the evt.target and sets it into state depending on the name
+  * @param  evt 
+  * @return none just sets state
+  */
   // when you click a movie on the Homepage this sets the state for showone and modal
   showTargetMovie(evt) {
     const movieId = parseInt(evt.target.name, 10);
@@ -101,6 +137,12 @@ class App extends Component {
     });
   }
 
+  /** @func showEditForm
+  * @desc this is bound and passed to ShowOne in order to show the edit form on specific reviews
+  * by taking the evt.target and sets it into state depending on the name
+  * @param  evt 
+  * @return none just sets state
+  */
   showEditForm(evt) {
     const name = parseInt(evt.target.name, 10);
     this.setState((prevState) => {
@@ -110,30 +152,39 @@ class App extends Component {
     });
   }
 
-  populateStorage() {
-    localStorage.setItem('user', this.state.username);
-  }
+  // coming soon
+  // populateStorage() {
+  //   localStorage.setItem('user', this.state.username);
+  // }
 
-  logUser(userToken) {
-    debugger;
-    const userData = jwtDecode(userToken.token);
-    debugger;
-    this.setState({
-      username: userData.username,
-      email: userData.email,
-    });
-    this.populateStorage();
-  }
+  // logUser(userToken) {
+  //   const userData = jwtDecode(userToken.token);
+  //   this.setState({
+  //     username: userData.username,
+  //     email: userData.email,
+  //   });
+  //   this.populateStorage();
+  // }
 
+
+  /** @func createReview
+  * @desc gets passed a review and sends it to the backend and then fetches new data
+  * @param  review  takes a new review
+  * @return none just sets state
+  */
   async createReview(review) {
     const reviewData = await saveReview(review);
     this.getReviews();
     this.setState({
-      currentView: '', /* show one */
       selectedReviews: reviewData.reviews,
     });
   }
 
+  /** @func editReview
+  * @desc gets passed an edited review and sends it to the backend and then fetches new data
+  * @param  review  takes an edited review
+  * @return none just sets state
+  */
   async editReview(review) {
     const reviewData = await updateReview(review);
     this.getReviews();
@@ -143,11 +194,17 @@ class App extends Component {
     });
   }
 
+  /** @func deleteReview
+  * @desc gets passed an id and deletes the the review with that id from the database
+  * @param  id  takes review id
+  * @return none just sets state
+  */
   async deleteReview(id) {
     await destroyReview(id);
     this.getReviews();
   }
 
+  // coming soon
   async createUser(user) {
     debugger;
     const userToken = await registerUser(user);
@@ -155,6 +212,7 @@ class App extends Component {
     this.logUser(userToken);
   }
 
+  // coming soon
   async loginUser(user) {
     debugger;
     const userToken = await login(user);
@@ -162,6 +220,11 @@ class App extends Component {
     this.logUser(userToken);
   }
 
+  /** @func choosePage
+  * @desc uses a switch in order to determine which component to show
+  * @param  string currentPage  
+  * @return a component
+  */
   choosePage() {
     const { currentPage } = this.state;
     switch (currentPage) {
@@ -191,9 +254,12 @@ class App extends Component {
       }
   }
 
+  /** @func render
+  * @desc renders our homepage
+  * @param  none
+  * @return our webpage or a bunch of components and htmls tags
+  */
   render() {
-    const { movies, reviews, show } = this.state;
-
     return (
       <main className="App">
         <Header />
