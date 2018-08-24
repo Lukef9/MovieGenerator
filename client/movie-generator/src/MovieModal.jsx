@@ -22,7 +22,8 @@ function MovieModal({toggle, movie, toShowOne}) {
             <div className="reviews">
               If you would like to see reviews press see more details below
             </div>
-            <input type="button" value="See More Details" name="one" onClick={(evt) => toShowOne(evt)} />
+            <input className="see-more-details" type="button" value="See More Details" 
+            name="one" onClick={(evt) => toShowOne(evt)} />
           </div>
         </section>
       </div>
