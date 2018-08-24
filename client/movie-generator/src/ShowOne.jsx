@@ -35,6 +35,7 @@ function showLeft(movie) {
     )
   }
 
+  // KZ: showOne completed with separate pane templates
 
 {/* this is where the user review container info starts */}
   function showRight(showEditForm, editShow, editThisReview, movie, reviews, onCreate, onDelete, onUpdate) {
@@ -76,6 +77,7 @@ function ShowOne({ showEditForm, editShow, editThisReview, movie, reviews, onCre
         <div className="showOneContainer">
             <div className="thisMoviePosterPane">
               <img className="posters" src={movie.img} alt={movie.title} height={ '400vh' } />
+              {/* KZ: Added return home button */}
               <button className="returnHome"><a className="returnHomeLink" href="http://localhost:3000/movies">Return Home</a></button>
             </div>
 

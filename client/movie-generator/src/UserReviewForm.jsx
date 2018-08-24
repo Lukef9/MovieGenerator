@@ -11,22 +11,25 @@ class UserReviewForm extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+
+    // KZ: Keeping these in case we change our plans for the form
     // this.handleMovieId = this.handleChange.bind(this, 'movie_id');
     // this.handleReviewDesc = this.handleChange.bind(this, 'review_desc');
   }
 
-  //   MAKE SURE TO PASS INPUT AS A PARAMETER WHEN USING TWO INPUT FIELDS
+  //   KZ: MAKE SURE TO PASS INPUT AS A PARAMETER WHEN USING TWO INPUT FIELDS
   handleChange(evt) {
     this.setState({
       review_desc: evt.target.value,
       // movie_id: evt.target.value
     });
 
-    // THIS IS FOR TWO INPUT FIELDS
+    // KZ: THIS IS FOR TWO INPUT FIELDS
     // this.setState({
     //   [input]: evt.target.value,
     // });
 
+    // KZ: Query selecting the field and message to get a character counter to change on keypress
     const reviewField = document.getElementById('reviewField');
     const charMessage = document.getElementById('charMessage');
     const charLimit = 255;
@@ -35,6 +38,9 @@ class UserReviewForm extends Component {
         charMessage.innerHTML = `${charLimit - reviewField.value.length} Characters Remaining`;
       }
     };
+
+    // KZ: using setInterval to run the checkLimit so it shows how many characters left
+    // KZ: review_desc is varchar(255) in our schema
     setInterval(checkLimit, 200);
   }
 
@@ -48,6 +54,8 @@ class UserReviewForm extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
+
+          {/* KZ: using textarea instead of input field because review_desc is Varchar(255) in our schema */}
           <textarea
           className="takes-the-reviews-input"
             cols="50"
@@ -69,6 +77,7 @@ class UserReviewForm extends Component {
           />
         */}
 
+          {/* KZ: DON'T MESS WITH MY COUNTER */}
           <label
             htmlFor="reviewField"
             id="charMessage"

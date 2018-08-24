@@ -9,12 +9,14 @@ class UserRegistrationForm extends Component {
       email: '',
     };
 
+    // KZ: bind three separate input fields to handleChange
     this.handleUsername = this.handleChange.bind(this, 'username');
     this.handlePassword = this.handleChange.bind(this, 'password');
     this.handleEmail = this.handleChange.bind(this, 'email');
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+    // KZ: targeting input field's value because they're separate
   handleChange(input, evt) {
     this.setState({
       [input]: evt.target.value,
@@ -38,6 +40,8 @@ class UserRegistrationForm extends Component {
             value={this.state.username}
             onChange={this.handleUsername}
           />
+
+          {/* KZ: input type password to keep privacy */}
           <label htmlFor="passwordInput">Password</label>
           <input
             type="password"
