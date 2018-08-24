@@ -42,9 +42,9 @@ class App extends Component {
     this.createReview = this.createReview.bind(this);
     this.editReview = this.editReview.bind(this);
     this.deleteReview = this.deleteReview.bind(this);
-    this.createUser = this.createUser.bind(this);
-    this.loginUser = this.loginUser.bind(this);
-    this.logUser = this.logUser.bind(this);
+    // this.createUser = this.createUser.bind(this); coming soon
+    // this.loginUser = this.loginUser.bind(this);
+    // this.logUser = this.logUser.bind(this);
     this.toggleCurrentPane = this.toggleCurrentPane.bind(this);
     this.toggleCurrentPage = this.toggleCurrentPage.bind(this);
     this.showTargetMovie = this.showTargetMovie.bind(this);
