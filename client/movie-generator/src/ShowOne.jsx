@@ -76,6 +76,7 @@ function ShowOne({ showEditForm, editShow, editThisReview, movie, reviews, onCre
         <div className="showOneContainer">
             <div className="thisMoviePosterPane">
               <img className="posters" src={movie.img} alt={movie.title} height={ '400vh' } />
+              <button className="returnHome"><a className="returnHomeLink" href="http://localhost:3000/movies">Return Home</a></button>
             </div>
 
 {/* this div contains the cast and summary info */}
