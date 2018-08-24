@@ -9,24 +9,19 @@ function MovieModal({toggle, movie, toShowOne}) {
       <div type="button" onClick={toggle} className="closeModal">X</div>
       <div className="inner-modal">
         <header className="modal-header">
-          <p className="modal-title">Movie Title</p>
+          <p className="modal-title">{movie.title}</p>
         </header>
         <section className="modal-body">
           <figure className="movie-image">
-            {/* <img /> */}
+            <img className="posters" src={movie.img} alt={movie.title} />
           </figure>
           <div className="syn-rev-wrapper">
             <article className="synopsis">
-              Synopsis Lorem ipsum dolor, s
-              it amet consectetur adipisicing elit. Illum quibusdam magni 
-              odio pariatur culpa officiis voluptas.
-              {' '}
+              {movie.synopsis}
             </article>
-            <review className="reviews">
-              Reviews and Ratings veniam maiores quisquam fuga
-              dolorum ipsa, cumque, aliquid harum consequatur saepe.
-              Ratione, nemo vitae!
-            </review>
+            <div className="reviews">
+              If you would like to see reviews press see more details below
+            </div>
             <input type="button" value="See More Details" name="one" onClick={(evt) => toShowOne(evt)} />
           </div>
         </section>

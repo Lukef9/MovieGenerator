@@ -75,7 +75,7 @@ function ShowOne({ showEditForm, editShow, editThisReview, movie, reviews, onCre
     // outside div for the whole show one page
         <div className="showOneContainer">
             <div className="thisMoviePosterPane">
-              <img src={movie.img} alt={movie.title} height={ '400vh' } />
+              <img className="posters" src={movie.img} alt={movie.title} height={ '400vh' } />
             </div>
 
 {/* this div contains the cast and summary info */}

@@ -96,11 +96,10 @@ class App extends Component {
 
   // when you click a movie on the Homepage this sets the state for showone and modal
   showTargetMovie(evt) {
-    debugger;
     const movieId = parseInt(evt.target.name, 10);
     const movie = this.state.movies[movieId-1]
     this.setState((prevState) => {
-      prevState.currentMovie = movie;
+      prevState.selectedMovie = movie;
       return prevState;
     });
   }
@@ -197,7 +196,7 @@ class App extends Component {
           showEditForm={this.showEditForm}
           editShow={this.state.editShow}
           editThisReview={this.state.editThisReview}
-          movie={this.state.movies[0]} 
+          movie={this.state.selectedMovie} 
           reviews={this.state.reviews} 
           onCreate={this.createReview}
           onDelete={this.deleteReview}
