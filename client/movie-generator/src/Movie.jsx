@@ -1,9 +1,9 @@
 import React from 'react';
 
-function Movie({ movie }) {
+function Movie({ movie, showTargetMovie }) {
   return (
     <div>
-      <img className="posters" src={movie.img} alt={movie.title} />
+      <button className="buttonPoster" style={{backgroundImage:`url(${movie.img})`}} onClick={evt => showTargetMovie(evt)} name={movie.movie_id}></button>
     </div>
   );
 }
