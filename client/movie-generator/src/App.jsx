@@ -203,6 +203,7 @@ class App extends Component {
           onUpdate={this.editReview}
           toggleCurrentPane={this.toggleCurrentPane}
           currentPane={this.state.currentPane}
+          toHome={this.toggleCurrentPage}
         /> : '')
       }
   }

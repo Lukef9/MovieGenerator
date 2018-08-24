@@ -11,7 +11,7 @@ body {
   text-align: center;
   padding: 4vh;
   font-size: 20pt;
-  color: #4e4e50;
+  color: #6f2232;
   border-radius: 20px;
 }
 .App-header {
@@ -85,8 +85,8 @@ TODO make this a search icon instead of a button */
 
 /* the header for the top movie section */
 .Header-bar{
-  background-color: black;
-  color: white;
+  background-color: #1A1A1D;
+  color: #940740;
   height: 40px;
   padding-top: 10px;
   padding-left: 20px;
@@ -145,7 +145,6 @@ TODO a for loop or map feature to show the divs based on movies */
   width: 60vw;
   opacity: 1;
   background-color: #1a1a1d;
-  margin-left: 12vw;
   margin-top: -21vh;
   position: absolute;
   z-index: 10;
