@@ -152,49 +152,6 @@ VALUES (
 14
 );
 
-INSERT INTO movies (title, movie_cast, genre, year, synopsis, img, movie_rating)
-VALUES (
-'The Lion King', 
-'Rowan Atkinson, Matthew Broderick, Niketa Calame-Harris, Jim Cummings, Whoopi Goldberg, Robert Guillaume, Jeremy Irons, James Earl Jones, Moira Kelly, Nathan Lane, Zoe Leader, Cheech Marin, Ernie Sabella, Madge Sinclair, Johnathan Taylor Thomas', 
-'Animation, Adventure, Drama', 
-1994, 
-'A Lion cub crown prince is tricked by a treacherous uncle into thinking he caused his fathers death and flees into exile in despair, only to learn in adulthood his identity and his responsibilities.', 
-'https://m.media-amazon.com/images/M/MV5BYTYxNGMyZTYtMjE3MS00MzNjLWFjNmYtMDk3N2FmM2JiM2M1XkEyXkFqcGdeQXVyNjY5NDU4NzI@._V1_SY1000_CR0,0,673,1000_AL_.jpg',
-15
-);
-
-INSERT INTO movies (title, movie_cast, genre, year, synopsis, img, movie_rating)
-VALUES (
-'Mother', 
-'Hye-ja Kim, Won Bin, Goo Jin, Je-mun Yun, Mi-seon Jeon, Sae-byeok Song, Byoung-Soon Kim, Woo-hee Chun, Gin-goo Kim', 
-'Action, Crime, Drama', 
-2009, 
-'A mother desperately searches for the killer who framed her son for a girls horrific murder.', 
-'https://m.media-amazon.com/images/M/MV5BODFhNmExODQtNWI3OS00YTBhLWJkMmUtYmEyMzJlZTAxMjFkL2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SY1000_CR0,0,697,1000_AL_.jpg',
-16
-);
-
-INSERT INTO movies (title, movie_cast, genre, year, synopsis, img, movie_rating)
-VALUES (
-'Star Wars: The Force Awakens', 
-'Harrison Ford, Mark Hamill, Carrie Fisher, Adam Driver, Daisy Ridley, John Boyega, Oscar Isaac, Lupita Nyongo, Andy Serkis, Domhnall Gleeson, Anthony Daniels, Max von Sydow, Peter Mayhew, Gwendoline Christie, Simon Pegg', 
-'Action, Adventure, Fantasy', 
-2015, 
-'Three decades after the Empires defeat, a new threat arises in the militant First Order. Stormtrooper defector Finn and the scavenger Rey are caught up in the Resistances search for the missing Luke Skywalker.', 
-'https://m.media-amazon.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_SY1000_CR0,0,677,1000_AL_.jpg',
-17
-);
-
-INSERT INTO movies (title, movie_cast, genre, year, synopsis, img, movie_rating)
-VALUES (
-'Fight Club', 
-'Edward Norton, Brad Pitt, Meat Loaf, Zach Grenier, Richmond Arquette, David Andrews, George Maguire, Helena Bonham Carter', 
-'Drama', 
-1999, 
-'An insomniac office worker and a devil-may-care soapmaker form an underground fight club that evolves into something much, much more.', 
-'https://m.media-amazon.com/images/M/MV5BNGM2NjQxZTAtMmU5My00YTk5LWFmOWMtYjZlYzk4YzMwNjFlXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SY1000_CR0,0,666,1000_AL_.jpg',
-18
-);
 
 INSERT INTO reviews (review_desc, movie_id, rating)
 VALUES ('Perfect example of a re-vamp exectuion', 1, 4);
@@ -238,17 +195,6 @@ VALUES ('Young Harrison Ford is such a hotty', 13, 4);
 INSERT INTO reviews (review_desc, movie_id, rating)
 VALUES ('I wish I have a step brother', 14, 3);
 
-INSERT INTO reviews (review_desc, movie_id, rating)
-VALUES ('Simbaaaaaaa', 15, 5);
-
-INSERT INTO reviews (review_desc, movie_id, rating)
-VALUES ('Interesting crime drama had me on the edge of my seat.', 16, 4);
-
-INSERT INTO reviews (review_desc, movie_id, rating)
-VALUES ('I never liked Star Wars but this one is good', 17, 3);
-
-INSERT INTO reviews (review_desc, movie_id, rating)
-VALUES ('I better get some sleep or Ill start making soap', 18, 4);
 
 INSERT INTO reviews (review_desc, movie_id, rating)
 VALUES ('Test Filter Review... This should in Star Trek', 1, 1);
