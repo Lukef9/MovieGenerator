@@ -7,7 +7,7 @@ import Header from './Header';
 import Footer from './Footer';
 import Homepage from './Homepage';
 import ShowOne from './ShowOne';
-// import MovieModal from './MovieModal'; used in HomePage
+//import MovieModal from './MovieModal';
 
 import {
   fetchMovies,

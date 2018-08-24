@@ -46,8 +46,8 @@ function showLeft(movie) {
                   <div className="aUserReview">
                   {chooseDisplay(review, onUpdate, editShow, editThisReview)}
                   </div>
-                  <button onClick={() => onDelete(review.review_id)}>Delete Review</button>
-                  <button onClick={(evt) => showEditForm(evt)} name={review.review_id} >edit</button>
+                  <button className="makes-changes-to-review-form" onClick={() => onDelete(review.review_id)}>Delete Review</button>
+                  <button className="makes-changes-to-review-form" onClick={(evt) => showEditForm(evt)} name={review.review_id} >edit</button>
                   
                 </div>
               ))
@@ -81,9 +81,9 @@ function ShowOne({ showEditForm, editShow, editThisReview, movie, reviews, onCre
 {/* this div contains the cast and summary info */}
             <div className="showOneCenterPane">
             <div className="H1-div-container">
-              <div className="thisMovieTitle"><button name="left" onClick={(evt) => toggleCurrentPane(evt)}> Movie Title </button></div>
+              <div ><button className="thisMovieTitle" name="left" onClick={(evt) => toggleCurrentPane(evt)}> Movie Title </button></div>
               
-              <div><button name="center" onClick={(evt) => toggleCurrentPane(evt)}>Info</button></div>
+              <div><button className="movieInfo" name="center" onClick={(evt) => toggleCurrentPane(evt)}>Info</button></div>
               <div><button className="userReviewHeader" name="right" onClick={(evt) => toggleCurrentPane(evt)}>Reviews</button></div>
 
               </div>

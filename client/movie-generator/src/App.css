@@ -12,20 +12,19 @@
 }
 .App-header {
   background-color: #1a1a1d;
-  height: 110px;
+  height: 13vh;
   color: white;
   display: flex;
   font-size: 14pt;
 }
 /* holds the register and login divs */
 .Flex-div{
-  width: 400px;
+  width: 30vw;
   display: flex;
-  margin-left: 500px;
-  padding-left: 250px;
+  margin-left: 45vw;
 }
 .Register{
-  margin: 4vh 2vh 2vw 9vw;
+  margin: 2vh 2vh 2vw 9vw;
   height: 5vh;
   width: 8vw;
   background-color:#6f2232;
@@ -37,7 +36,7 @@
 .Login{
   height: 5vh;
   width: 8vw;
-  margin: 4vh 1vh 2vw 1vw;
+  margin: 2vh 3vh 2vw 1vw;
   background-color: #6f2232;
   padding-top: 2vh;
   border-radius: 15px;
@@ -70,13 +69,13 @@ TODO make this a search icon instead of a button */
   color: #4285f4;
 }
 .Search-submit:hover{
-  box-shadow: 3px 5px black;
+  box-shadow: 3px 5px #1a1a1d;
   
 }
 /* div covering the whole body below the search bar */
 .Main-section{
-  height: 800px;;
-  border: solid red;
+  height: 800px;
+  border: solid #6f2232;
 
 }
 
@@ -122,7 +121,7 @@ TODO a for loop or map feature to show the divs based on movies */
 /* homepage footer section */
 .Footer{
   background: #1a1a1d;
-  color: white;
+  color: #4e4e50;
   text-align: center;
   font-size: 16pt;
   padding: 1vh;
@@ -140,7 +139,7 @@ TODO a for loop or map feature to show the divs based on movies */
   height: 70vh;
   width: 60vw;
   opacity: 1;
-  background-color: black;
+  background-color: #1a1a1d;
   margin-left: 19vw;
   margin-top: -31vh;
   position: absolute;
@@ -154,15 +153,15 @@ TODO a for loop or map feature to show the divs based on movies */
   padding: 5px;
   text-align: center;
   font-size: 18pt;
-  background: navy;
-  color: white;
+  background: #6f2232;
+  color: #1a1a1d;
 }
 .closeModal{
 margin-left: 58vw;
 height: 19px;
 width: 25px;
-background-color: navy;
-color: white;
+background-color: #6f2232;
+color: #1a1a1d;
 text-align: center;
 }
 .modal-body{
@@ -209,34 +208,37 @@ text-align: center;
   height: 50vh;
   width: 19vw;
   margin: 8vh 5vh 4vh 35vh;
-  
+  border-radius: 8px;
 }
 
 /* Center Pane */
 .showOneCenterPane {
-  border: 2px solid #222;
-  height: 60vh;
+  border: 2px solid #1a1a1d;
+  height: 70vh;
   width: 40vw;
   margin-top: 8vh;
-  
+  border-radius: 10px;
 }
 /* This Movie's Details */
 .thisMovieTitle {
   text-align: center;
+  font-size: 20pt;
+  background-color: #6f2232;
+  color: #1a1a1d;
+  outline-style: none;
+  border: none;
+
   /* border: solid purple; */
 }
 .thisMovieSynopsis {
-  /* border: 1px solid; */
   margin: 5vh;
   overflow: scroll;
-  padding: 1vh;
-}
-p{
   font-size: 16pt;
 }
+
 .thisMovieCast {
-  /* border: 1px dashed navy; */
   margin: 5vh;
+  font-size: 16pt;
 }
 .thisMovieInfo {
   /* border: 1px solid; */
@@ -245,8 +247,6 @@ p{
   width: 34vw;
   padding: 2vh;
   font-size: 20pt;
-
-  
 }
 .H1-div-container{
   display: flex;
@@ -256,34 +256,65 @@ p{
   background-color:#6f2232;
   color: #1a1a1d;
   border-radius: 10px;
+  height: 3vh;
+  padding: 3vh;
+
+}
+.movieInfo{
+  text-align: center;
+  font-size: 20pt;
+  background-color: #6f2232;
+  color: #1a1a1d;
+  outline-style: none;
+  border: none;
+
 }
 
 /* Right Pane -- User Reviews */
 .userReviewContainer {
-  /* border: 2px solid; */
-  height: 50vh;
   width: 34vw;
-  /* padding: 2vh; */
   margin-left: 4vh;
-  position: absolute;
-  z-index: 10;
-  font-size: 20pt;
+  /* font-size: 20pt; */
 }
 
 .userReviewHeader {
-  /* border: dotted 2px maroon; */
   text-align: center;
+  font-size: 20pt;
+  background-color: #6f2232;
+  color: #1a1a1d;
+  outline-style: none;
+  border: none;
 }
-
 
 .aUserReview {
-  border: 1px solid blue;
-  margin: 5vh;
+  border: 1px solid #1a1a1d;
+  /* margin: 5vh; */
   font-size: 16pt;
+  margin-top: 5vh;
 }
-
+.makes-changes-to-review-form{
+  text-align: center;
+  font-size: 12pt;
+  background-color: #6f2232;
+  color: #1a1a1d;
+  outline-style: none;
+  border: none;
+  margin: 2vh;
+  border-radius: 3px;
+}
+.takes-the-reviews-input{
+  width: 35vw;
+  height: 20vh;
+  font-size: 14pt;
+  margin-top: 5vh;
+}
+.edits-form{
+margin-left: 1vw;
+width: 30vw;
+font-size: 14pt;
+margin-top:2vh;
+}
 .posters {
-  border: dotted red;
   height: 280px;
   width: 180px;
 }
