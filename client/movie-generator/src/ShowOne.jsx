@@ -5,9 +5,9 @@ import EditForm from './EditForm';
 
 
 function chooseDisplay(review, onUpdate, editShow, evt) {
-  const y = evt;
-  const x = (editShow && review.review_id=== y? <EditForm review={review} onUpdate={onUpdate} /> : review.review_desc);
-  return x;
+  const targetReviewId = evt;
+  const chosenDisplay = (editShow && review.review_id=== targetReviewId? <EditForm review={review} onUpdate={onUpdate} /> : review.review_desc);
+  return chosenDisplay;
 }
 
 function showLeft(movie) {
@@ -29,7 +29,7 @@ function showLeft(movie) {
     return (
       <div className="thisMovieInfo">
         <p>Genre: {movie.genre}</p>
-        <p>Rating: {movie.movie_rating}5</p>
+        <p>Rating: {movie.movie_rating}/5</p>
         <p>Year: {movie.year}</p>
       </div>
     )
@@ -71,14 +71,14 @@ function choosePane(showEditForm, editShow, editThisReview, movie, reviews, onCr
   
 }
 
-function ShowOne({ showEditForm, editShow, editThisReview, movie, reviews, onCreate, onDelete, onUpdate, toggleCurrentPane, currentPane }) {
+function ShowOne({ showEditForm, editShow, editThisReview, movie, reviews, onCreate, onDelete, onUpdate, toggleCurrentPane, currentPane, toHome }) {
   return (
     // outside div for the whole show one page
         <div className="showOneContainer">
             <div className="thisMoviePosterPane">
               <img className="posters" src={movie.img} alt={movie.title} height={ '400vh' } />
               {/* KZ: Added return home button */}
-              <button className="returnHome"><a className="returnHomeLink" href="http://localhost:3000/movies">Return Home</a></button>
+              <button className="returnHome" name={'home'} onClick={(evt => toHome(evt))}>Return Home</button>
             </div>
 
 {/* this div contains the cast and summary info */}
