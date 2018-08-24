@@ -111,7 +111,7 @@ VALUES (
 INSERT INTO movies (title, movie_cast, genre, year, synopsis, img, movie_rating) 
 VALUES (
 'Avengers: Infinity War',
-'Robert Downey Jr., Chris Hemsworth, Mark Ruffalo, Chris Evans, Scarlett Johansson, Don Cheadle, Benedict CUmberbatch, Tom Holland, Chadwich Boseman, Zoe Saldana, Karen Gillan, Tom Hiddleston, Paul Bettany, Elizabeth Olsen, Anthony Mackie, Sebastian Stan, Idris Elba, Danai Gurira, Peter Dinklage, Benedict Wong, Pom Klmentieff, Dave Bautista, Vin Diesel, Bradley Cooper, Gwyneth Paltrow, Benicio Del Toro, Josh Brolin, Chris Pratt',
+'Robert Downey Jr., Chris Hemsworth, Mark Ruffalo, Chris Evans, Scarlett Johansson, Don Cheadle, Benedict CUmberbatch, Tom Holland, Chadwich Boseman, Zoe Saldana, Karen Gillan, Tom Hiddleston, Paul Bettany, Elizabeth Olsen',
 'Action, Adventure Fantasy',
 2018,
 'The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.',
