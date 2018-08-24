@@ -322,3 +322,9 @@ margin-top:2vh;
   height: 280px;
   width: 180px;
 }
+
+.buttonPoster {
+  height: 280px;
+  width: 180px;
+  background-size: cover;
+}
