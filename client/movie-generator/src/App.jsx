@@ -3,13 +3,12 @@ import React, { Component } from 'react';
 import jwtDecode from 'jwt-decode';
 import './App.css';
 import SearchForm from './SearchForm';
-import LoginForm from './LoginForm';
 import Header from './Header';
 import Footer from './Footer';
 import Homepage from './Homepage';
 import ShowOne from './ShowOne';
-// import MovieModal from './MovieModal'; used in HomePage
-import RegisterForm from './UserRegistrationForm';
+import LoginForm from './LoginForm';                  // coming soon
+import RegisterForm from './UserRegistrationForm';    // coming soon
 
 import {
   fetchMovies,
@@ -40,8 +39,6 @@ class App extends Component {
     };
     this.showModal = this.showModal.bind(this);
     this.showEditForm = this.showEditForm.bind(this);
-    // this.showMovie = this.showMovie.bind(this);
-    // this.showReviews = this.showReviews.bind(this);
     this.createReview = this.createReview.bind(this);
     this.editReview = this.editReview.bind(this);
     this.deleteReview = this.deleteReview.bind(this);
@@ -112,20 +109,6 @@ class App extends Component {
       return prevState;
     });
   }
-
-  // showMovie(movie) {
-  //   this.setState({
-  //     selectedMovie: movie,
-  //     currentView: '', /* show one page containing forms */
-  //   });
-  // }
-
-  // showReviews(reviews) {
-  //   this.setState({
-  //     selectedReviews: reviews,
-  //     currentView: '', /* show one page containing reviews for selected movie */
-  //   });
-  // }
 
   populateStorage() {
     localStorage.setItem('user', this.state.username);
@@ -213,8 +196,6 @@ class App extends Component {
 
     return (
       <main className="App">
-        {/* <RegisterForm onSubmit={this.createUser} />
-        <LoginForm onSubmit={this.loginUser} /> */}
         <Header />
         <SearchForm />
         {this.choosePage()}
