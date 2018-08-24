@@ -339,3 +339,22 @@ margin-top:2vh;
   width: 180px;
   background-size: cover;
 }
+
+.returnHome {
+  margin: 20px auto 20px auto;
+  height: 8vh;
+  width: 12vw;
+  background-color:#6f2232;
+  /* padding-top: 20px; */
+  border-radius: 15px;
+  text-align: center;
+  color: #1a1a1d;
+}
+
+.returnHomeLink {
+  text-align: center;
+  font-size: 12pt;
+  outline-style: none;
+  color: #1a1a1d;
+  text-decoration: none;
+}
