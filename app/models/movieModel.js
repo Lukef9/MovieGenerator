@@ -16,6 +16,8 @@ module.exports = {
         WHERE movie_id = $1`, id);
   },
 
+
+  // KZ: keeping consistent with attribute names in our schema for insert and update queries
   insertNewMovie(movie) {
     return db.one(`
         INSERT INTO movies 

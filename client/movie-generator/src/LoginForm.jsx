@@ -7,11 +7,14 @@ class LoginForm extends Component {
       username: '',
       password: '',
     };
+
+    // KZ: bind username and password to handleChange
     this.handleUsername = this.handleChange.bind(this, 'username');
     this.handlePassword = this.handleChange.bind(this, 'password');
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  // KZ: handleChange requires two parameters because we have two input fields.
   handleChange(input, evt) {
     this.setState({
       [input]: evt.target.value,
@@ -25,6 +28,7 @@ class LoginForm extends Component {
 
   render() {
     const { username, password } = this.state;
+    // KZ: deconstruct this.state for convienence
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -35,6 +39,8 @@ class LoginForm extends Component {
             value={username}
             onChange={this.handleUsername}
           />
+
+          {/* KZ: input type password to for privacy */}
           <input
             type="password"
             name="password"

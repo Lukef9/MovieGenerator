@@ -10,13 +10,14 @@ class UserProfileForm extends Component {
             icon: ''
         }
 
+        // KZ: bind all four input fields to handleChange
         this.handleUsername = this.handleChange.bind(this, 'userName');
         this.handlePwDigest = this.handleChange.bind(this, 'pwDigest');
         this.handleEmail = this.handleChange.bind(this, 'email');
         this.handleIcon = this.handleChange.bind(this, 'icon');
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-
+    // KZ: targeting input's value to distinguish each input field separately
     handleChange(input, evt) {
         this.setState({
             [input]: evt.target.value,

@@ -339,6 +339,8 @@ margin-top:2vh;
   background-size: cover;
 }
 
+
+/* KZ: Styling return home button in showOne */
 .returnHome {
   margin: 20px auto 20px auto;
   height: 8vh;

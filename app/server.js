@@ -16,6 +16,7 @@ const authRouter = require('./routes/auth');
 const movieRouter = require('./routes/movieRouter');
 const reviewRouter = require('./routes/reviewRouter');
 
+// KZ: remember PORT 3001 for backend server
 const PORT = process.env.PORT || 3001;
 
 app.use(logger('dev'));
@@ -43,6 +44,7 @@ app.get('/',
     });
   });
 
+// KZ: test send to make sure server is 200 OK
 app.get('/', (req, res) => {
   res.send('Your server test is 200 OK');
 });

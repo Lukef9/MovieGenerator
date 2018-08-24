@@ -6,8 +6,10 @@ function MovieList({ movies, show, toggle, toShowOne, showTargetMovie, selectedM
   let stuff;
   if (!movies) {
     stuff =(
+
+      // KZ: added loading message
     <p>
-      ROOOOAR
+      Fetching Top Movies...
     </p>
     )
   }
@@ -25,8 +27,9 @@ function MovieList({ movies, show, toggle, toShowOne, showTargetMovie, selectedM
           {show ? <MovieModal toggle={toggle} movie={selectedMovie} toShowOne={toShowOne} /> : ''}
         </div>
       ) : (
+        // KZ: changed message in case movies don't fetch
         <div>
-          you fail at movies
+          Uh-oh Something Went Wrong...
         </div>
           )
         )
