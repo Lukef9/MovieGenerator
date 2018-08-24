@@ -85,7 +85,7 @@ TODO make this a search icon instead of a button */
 
 /* the header for the top movie section */
 .Header-bar{
-  background-color: black;
+  background-color: #1A1A1D;
   color: white;
   height: 40px;
   padding-top: 10px;
