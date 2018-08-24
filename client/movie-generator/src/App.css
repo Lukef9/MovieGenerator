@@ -12,6 +12,7 @@ body {
   padding: 4vh;
   font-size: 20pt;
   color: #4e4e50;
+  border-radius: 20px;
 }
 .App-header {
   background-color: #1a1a1d;
@@ -144,8 +145,8 @@ TODO a for loop or map feature to show the divs based on movies */
   width: 60vw;
   opacity: 1;
   background-color: #1a1a1d;
-  margin-left: 19vw;
-  margin-top: -31vh;
+  margin-left: 12vw;
+  margin-top: -21vh;
   position: absolute;
   z-index: 10;
 }
@@ -311,6 +312,16 @@ text-align: center;
   height: 20vh;
   font-size: 14pt;
   margin-top: 5vh;
+}
+.see-more-details{
+  text-align: center;
+  font-size: 12pt;
+  background-color: #6f2232;
+  color: #1a1a1d;
+  outline-style: none;
+  border: none;
+  margin: 2vh;
+  border-radius: 3px;
 }
 .edits-form{
 margin-left: 1vw;
