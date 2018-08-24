@@ -1,7 +1,7 @@
 const router = require('express')();
 
 const movieController = require('../controllers/movieController');
-
+// route handlers that fire when a specific http request is made under a specific path
 router.get('/:id',
   movieController.getOneMovie,
   (req, res) => res.json(res.locals.data));
