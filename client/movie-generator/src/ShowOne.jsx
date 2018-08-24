@@ -40,15 +40,14 @@ function showLeft(movie) {
   function showRight(showEditForm, editShow, editThisReview, movie, reviews, onCreate, onDelete, onUpdate) {
     return (
 <div className="userReviewContainer">
-            <h1 className="userReviewHeader">User Reviews</h1>
             {
               reviews.filter(review => review.movie_id === movie.movie_id).map((review) => (
                 <div key={review.review_id}>
                   <div className="aUserReview">
                   {chooseDisplay(review, onUpdate, editShow, editThisReview)}
                   </div>
-                  <button onClick={() => onDelete(review.review_id)}>Delete Review</button>
-                  <button onClick={(evt) => showEditForm(evt)} name={review.review_id} >edit</button>
+                  <button className="makes-changes-to-review-form" onClick={() => onDelete(review.review_id)}>Delete Review</button>
+                  <button className="makes-changes-to-review-form" onClick={(evt) => showEditForm(evt)} name={review.review_id} >edit</button>
                   
                 </div>
               ))
@@ -84,7 +83,7 @@ function ShowOne({ showEditForm, editShow, editThisReview, movie, reviews, onCre
             <div className="H1-div-container">
               <div ><button className="thisMovieTitle" name="left" onClick={(evt) => toggleCurrentPane(evt)}> Movie Title </button></div>
               
-              <div><button name="center" onClick={(evt) => toggleCurrentPane(evt)}>Info</button></div>
+              <div><button className="movieInfo" name="center" onClick={(evt) => toggleCurrentPane(evt)}>Info</button></div>
               <div><button className="userReviewHeader" name="right" onClick={(evt) => toggleCurrentPane(evt)}>Reviews</button></div>
 
               </div>

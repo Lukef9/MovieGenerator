@@ -49,6 +49,7 @@ class UserReviewForm extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <textarea
+          className="takes-the-reviews-input"
             cols="50"
             rows="8"
             maxLength="255"
@@ -72,11 +73,10 @@ class UserReviewForm extends Component {
             htmlFor="reviewField"
             id="charMessage"
             onChange={this.handleChange}
-          >
-255 Characters Remaining
+          >255 Characters Remaining
 
           </label>
-          <button type="submit">Add Review</button>
+          <button className="makes-changes-to-review-form" type="submit">Add Review</button>
     {/*<button type="submit" onSubmit={this.props.createReview}>Add Review</button>*/}
 
         </form>

@@ -39,11 +39,12 @@ class EditForm extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <input
+          className="edits-form"
             name="review"
             value={review}
             onChange={this.handleChange}
           />
-          <input type="submit" value="Update Review" />
+          <input className="makes-changes-to-review-form" type="submit" value="Update Review"/>
         </form>
       </div>
     );
